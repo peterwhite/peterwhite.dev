@@ -6,7 +6,8 @@ module.exports = {
   content: [
     './app/**/*.{js,ts,jsx,tsx}',
     './pages/**/*.{js,ts,jsx,tsx}',
-    './ui/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+    '!./node_modules',
   ],
   darkMode: 'class',
   future: {
@@ -26,6 +27,15 @@ module.exports = {
           },
         },
       }),
+      animation: {
+        border: 'border 4s ease infinite',
+      },
+      keyframes: {
+        border: {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+        },
+      },
       colors: {
         gray: colors.zinc,
         vercel: {
@@ -38,7 +48,8 @@ module.exports = {
         'blue-opaque': 'rgb(13 42 148 / 18%)',
       },
       fontFamily: {
-        sans: ['Inter', ...fontFamily.sans],
+        sans: ['var(--font-inter)', ...fontFamily.sans],
+        mono: ['var(--font-mono)', ...fontFamily.mono],
       },
 
       typography: (theme) => ({
