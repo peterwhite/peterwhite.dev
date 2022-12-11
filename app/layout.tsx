@@ -1,9 +1,9 @@
 import { BreadCrumbs } from '#/components/Breadcrumbs';
+import { DarkModeBackDrop } from '#/components/DarkModeBackDrop';
 import { Footer } from '#/components/Footer';
 import { GlobalNavigation } from '#/components/GlobalNavigation';
 import '#/styles/globals.css';
 import { Inter, JetBrains_Mono } from '@next/font/google';
-import { usePathname } from 'next/navigation';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -23,15 +23,17 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${jetBrains.variable} `}
-      style={{ colorScheme: 'light' }}
+      className={`${inter.variable} ${jetBrains.variable} dark
+    `}
     >
       <head />
-      <body className="relative bg-zinc-100 antialiased selection:bg-vercel-blue/90 selection:text-white dark:bg-zinc-900">
+      <body className="relative bg-zinc-100 text-zinc-800 antialiased selection:bg-vercel-blue/90 selection:text-white dark:bg-zinc-900 dark:text-zinc-200">
+        <DarkModeBackDrop />
+
         <GlobalNavigation />
 
         <div className="mx-auto max-w-4xl space-y-8 px-2 py-8 sm:my-4 lg:px-8">
-          <div className="rounded-lg border bg-white bg-opacity-50 transition-colors hover:bg-opacity-100">
+          <div className="rounded-lg border bg-white bg-opacity-50 transition-colors hover:bg-opacity-100 dark:border-zinc-600 dark:bg-zinc-900 dark:bg-opacity-25 dark:backdrop-blur-xl hover:dark:bg-opacity-75">
             <div className="space-y-4 p-6">
               <BreadCrumbs />
 
@@ -39,7 +41,7 @@ export default function RootLayout({
             </div>
           </div>
 
-          <div className="rounded-lg border bg-white bg-opacity-50 transition-colors hover:bg-opacity-100">
+          <div className="rounded-lg border bg-white bg-opacity-50 transition-colors hover:bg-opacity-100 dark:border-zinc-600 dark:bg-zinc-900 dark:bg-opacity-25 dark:backdrop-blur-xl hover:dark:bg-opacity-75">
             <div className="p-4 lg:p-6">
               <Footer />
             </div>

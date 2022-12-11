@@ -6,7 +6,7 @@ export default function Page() {
     <div className="mb-8 space-y-8">
       <div>
         <h3 className="mb-4 text-xl font-medium">Ramblings</h3>
-        <div className="prose text-zinc-800">
+        <div className="prose prose-zinc dark:prose-invert">
           <p>
             Occassionally, I need more than 280 characters to share my thoughts.
             Here you will find my brain-dumps and ramblings.

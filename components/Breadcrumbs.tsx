@@ -17,7 +17,7 @@ export function BreadCrumbs() {
     >
       <Link
         href={'/'}
-        className="pr-2 font-medium text-zinc-500 decoration-dotted underline-offset-4 transition hover:text-zinc-800 hover:underline"
+        className="pr-2 font-medium text-zinc-500 decoration-dotted underline-offset-4 transition hover:text-zinc-800 hover:underline dark:text-zinc-200"
       >
         Home
       </Link>

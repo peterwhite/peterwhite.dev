@@ -3,9 +3,9 @@ export default function Page() {
     <div className="space-y-12">
       <section id="about">
         <h3 className="mb-4 text-xl font-medium">About</h3>
-        <div className="prose text-zinc-800">
+        <div className="prose prose-zinc prose-headings:text-zinc-200 dark:prose-invert ">
           <p>A self-indulgent about page.</p>
-          <div className="prose mb-8">
+          <div className="mb-8">
             <h2>Links</h2>
             <ul>
               <li>
