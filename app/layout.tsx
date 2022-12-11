@@ -32,8 +32,8 @@ export default function RootLayout({
 
         <GlobalNavigation />
 
-        <div className="mx-auto max-w-4xl space-y-8 px-2 py-8 sm:my-4 lg:px-8">
-          <div className="rounded-lg border bg-white bg-opacity-50 transition-colors hover:bg-opacity-100 dark:border-zinc-600 dark:bg-zinc-900 dark:bg-opacity-25 dark:backdrop-blur-xl hover:dark:bg-opacity-75">
+        <div className="mx-auto max-w-4xl space-y-8 py-8 sm:my-4 sm:px-2 lg:px-8">
+          <div className="bg-white bg-opacity-50 transition-colors hover:bg-opacity-100 dark:border-zinc-600 dark:bg-zinc-900 dark:bg-opacity-25 dark:backdrop-blur-xl hover:dark:bg-opacity-75 sm:rounded-lg sm:border">
             <div className="space-y-4 p-6">
               <BreadCrumbs />
 
@@ -41,7 +41,7 @@ export default function RootLayout({
             </div>
           </div>
 
-          <div className="rounded-lg border bg-white bg-opacity-50 transition-colors hover:bg-opacity-100 dark:border-zinc-600 dark:bg-zinc-900 dark:bg-opacity-25 dark:backdrop-blur-xl hover:dark:bg-opacity-75">
+          <div className="bg-white bg-opacity-50 transition-colors hover:bg-opacity-100 dark:border-zinc-600 dark:bg-zinc-900 dark:bg-opacity-25 dark:backdrop-blur-xl hover:dark:bg-opacity-75 sm:rounded-lg sm:border">
             <div className="p-4 lg:p-6">
               <Footer />
             </div>
