@@ -1,3 +1,5 @@
+'use client';
+
 import { MoonIcon, SunIcon } from '@heroicons/react/solid';
 import Link from 'next/link';
 import { ActiveLink } from './ActiveLink';
@@ -5,7 +7,7 @@ import { ActiveLink } from './ActiveLink';
 export function GlobalNavigation() {
   return (
     <nav className="sticky left-0 top-0 z-40 w-full sm:top-6  ">
-      <div className="[@supports(backdrop-filter:blur(0px))]:bg-opacity-10] mx-auto flex max-w-4xl items-center justify-between border-b bg-white bg-opacity-50 p-4 py-3 text-sm backdrop-blur transition-colors   dark:border-zinc-600 dark:bg-zinc-900 dark:bg-opacity-25 sm:rounded-lg sm:border lg:px-6 ">
+      <div className="[@supports(backdrop-filter:blur(0px))]:bg-opacity-10] mx-auto flex max-w-4xl items-center justify-between border-b bg-white bg-opacity-50 p-4 py-3 text-sm backdrop-blur  transition-colors   dark:border-zinc-600 dark:bg-zinc-700 dark:bg-opacity-25 dark:shadow-sm sm:rounded-lg sm:border sm:dark:border-transparent lg:px-6 ">
         <Link
           className="group flex items-center justify-center rounded-full bg-white bg-gradient-to-r from-green-200 via-green-400 to-green-500 bg-[length:400%_400%] transition hover:scale-105 hover:animate-border focus:outline-none focus:ring-0 "
           href="/"
@@ -49,8 +51,26 @@ export function GlobalNavigation() {
             <span>Contact</span>
           </ActiveLink>
 
-          <SunIcon className="h-4 w-4" />
-          <MoonIcon className="h-4 w-4" />
+          <div className="cursor-pointer text-zinc-500 hover:text-zinc-800 dark:hover:text-zinc-200 ">
+            <SunIcon
+              className="hidden h-4 w-4 dark:block"
+              onClick={() => {
+                localStorage.setItem('theme', 'light');
+                document
+                  .getElementsByTagName('html')[0]
+                  .classList.toggle('dark');
+              }}
+            />
+            <MoonIcon
+              className="block h-4 w-4 dark:hidden"
+              onClick={() => {
+                localStorage.setItem('theme', 'dark');
+                document
+                  .getElementsByTagName('html')[0]
+                  .classList.toggle('dark');
+              }}
+            />
+          </div>
         </nav>
       </div>
     </nav>
