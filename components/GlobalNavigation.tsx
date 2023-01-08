@@ -37,12 +37,6 @@ export function GlobalNavigation() {
             <span>Posts</span>
           </ActiveLink>
           <ActiveLink
-            href="/uses"
-            className="text-zinc-700 decoration-dotted underline-offset-4 transition hover:text-zinc-800 hover:underline  dark:text-zinc-400 dark:hover:text-zinc-200 [&.active]:text-zinc-900 [&.active]:underline dark:[&.active]:text-zinc-200"
-          >
-            <span>Uses</span>
-          </ActiveLink>
-          <ActiveLink
             href="/about"
             className="text-zinc-700 decoration-dotted underline-offset-4 transition hover:text-zinc-800 hover:underline  dark:text-zinc-400 dark:hover:text-zinc-200 [&.active]:text-zinc-900 [&.active]:underline dark:[&.active]:text-zinc-200"
           >

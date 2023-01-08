@@ -3,65 +3,59 @@ export default function Page() {
   return (
     <div className="space-y-12">
       <section id="about">
-        <h3 className="mb-4 text-xl font-medium">About</h3>
+        <h3 className="mb-4 text-xl font-medium">About Me</h3>
         <div className="prose prose-zinc dark:prose-invert prose-headings:dark:text-zinc-200 ">
-          <p>A self-indulgent about page.</p>
           <div className="mb-8">
             <h2>Links</h2>
             <ul>
               <li>
-                Twitter: <a href="https://twitter.com/leeerob">@leeerob</a>
+                Twitter: <a href="https://twitter.com/petewht">@petewht</a>
               </li>
               <li>
-                GitHub: <a href="https://github.com/leerob">@leerob</a>
+                GitHub: <a href="https://github.com/peterwhite">@peterwhite</a>
               </li>
               <li>
-                Website: <a href="https://leerob.io/">https://leerob.io</a>
+                Website:{' '}
+                <a href="https://peterwhite.dev/">https://peterwhite.dev</a>
               </li>
               <li>
                 LinkedIn:{' '}
-                <a href="https://www.linkedin.com/in/leeerob/">
-                  https://www.linkedin.com/in/leeerob
+                <a href="https://www.linkedin.com/in/petewht/">
+                  https://www.linkedin.com/in/petewht/
                 </a>
               </li>
             </ul>
             <h2>Bio</h2>
             <h3>Job Title</h3>
-            <p>Lee Robinson, VP of Developer Experience at Vercel</p>
+            <p>Peter White, Senior Software Engineer at IndyRiot</p>
             <h3>Long, 3rd Person</h3>
             <p>
-              Lee Robinson is the VP of Developer Experience at{' '}
-              <a href="http://vercel.com/">Vercel</a>, where he helps developers
-              build a faster web and leads the Next.js community. He leads the
-              community for the React framework Next.js and is an open-source
-              contributor. An educator, writer, and speaker, Lee has created
-              courses on React, Next.js, and web development.
+              Peter White is a Senior Software Engineer at IndyRiot, where he
+              builds software for making better online communities. He is a
+              product engineer and full-stack developer with over a decade of
+              experience of building startups and internet-based products, in
+              both founding and contributing roles. He is also a mentor, advisor
+              and investor in early stage startups.
             </p>
             <h3>Long, 1st Person</h3>
             <p>
-              Hey, I'm Lee. I'm the VP of Developer Experience at{' '}
-              <a href="https://vercel.com/">Vercel</a>, where my team helps
-              developers build a faster web. I'm a Next.js contributor and help
-              lead our open-source communities. I'm passionate about frontend
-              development and have created courses on React, Next.js, and web
-              development. I'm an advisor and investor in early stage startups.
+              Hey, I'm Peter! Originally from Yorkshire in the UK, I migrated to
+              Norway in 2021. I am a Senior Software Engineer at IndyRiot, where
+              I build software for making better online communities. I am a
+              product engineer and full-stack developer with over a decade of
+              experience building startups and internet-based products, in both
+              founding and contributing roles. I am also a mentor, advisor, and
+              investor in early stage startups.
             </p>
             <h3>Short, 3rd Person</h3>
             <p>
-              Lee Robinson is the VP of Developer Experience at{' '}
-              <a href="http://vercel.com/">Vercel</a>, where he helps developers
-              build a faster web.
+              Peter White is a Senior Software Engineer at IndyRiot, where he
+              builds software for making better online communities
             </p>
             <h3>Short, 1st Person</h3>
             <p>
-              Hey, I'm Lee. I'm the VP of Developer Experience at{' '}
-              <a href="https://vercel.com/">Vercel</a>, where my team helps
-              developers build a faster web.
-            </p>
-            <h3>Education</h3>
-            <p>
-              Lee Robinson graduated from Iowa State University with a B.S. in
-              Computer Engineering.
+              Hey, I'm Peter! I am a Senior Software Engineer at IndyRiot, where
+              I build software for making better online communities
             </p>
           </div>
         </div>

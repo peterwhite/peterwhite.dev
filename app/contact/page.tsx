@@ -1,7 +1,27 @@
+/* eslint-disable react/no-unescaped-entities */
 export default function Page() {
   return (
     <div className="space-y-8">
-      <h1 className="text-xl font-medium">Peter Example</h1>
+      <div>
+        <h3 className="mb-4 text-xl font-medium">Contact Me</h3>
+        <div className="prose prose-zinc dark:prose-invert">
+          <p>
+            The best way to contact me is through one of the networks below. You
+            can also email me: hello at this domain.
+          </p>
+          <ul>
+            <li>
+              Twitter: <a href="https://twitter.com/petewht">@petewht</a>
+            </li>
+            <li>
+              LinkedIn:{' '}
+              <a href="https://www.linkedin.com/in/petewht/">
+                https://www.linkedin.com/in/petewht/
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   );
 }
