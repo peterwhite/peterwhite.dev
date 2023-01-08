@@ -1,5 +1,5 @@
 export const BackDrop = () => (
-  <div className=" fixed inset-0 isolate -z-10 opacity-40 blur-3xl dark:opacity-10 dark:mix-blend-color-dodge">
+  <div className=" fixed inset-0 isolate -z-10 opacity-30 blur-3xl dark:opacity-10 dark:mix-blend-color-dodge">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       version="1.1"

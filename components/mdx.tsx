@@ -7,7 +7,7 @@ const components = {
   h1: ({ className, ...props }: { className?: string }) => (
     <h1
       className={classNames(
-        // 'mt-2 scroll-m-20 text-4xl font-bold tracking-tight',
+        'mt-2 scroll-m-24 text-4xl font-bold tracking-tight',
         className,
       )}
       {...props}
@@ -16,7 +16,7 @@ const components = {
   h2: ({ className, ...props }: { className?: string }) => (
     <h2
       className={classNames(
-        // 'mt-10 scroll-m-20 border-b border-b-slate-200 pb-1 text-3xl font-semibold tracking-tight first:mt-0',
+        'mt-10 scroll-m-24 pb-1 text-3xl font-semibold tracking-tight first:mt-0',
         className,
       )}
       {...props}
@@ -25,7 +25,7 @@ const components = {
   h3: ({ className, ...props }: { className?: string }) => (
     <h3
       className={classNames(
-        // 'mt-8 scroll-m-20 text-2xl font-semibold tracking-tight',
+        'mt-8 scroll-m-24 text-2xl font-semibold tracking-tight',
         className,
       )}
       {...props}
@@ -34,7 +34,7 @@ const components = {
   h4: ({ className, ...props }: { className?: string }) => (
     <h4
       className={classNames(
-        'mt-8 scroll-m-20 text-xl font-semibold tracking-tight',
+        'mt-8 scroll-m-24 text-xl font-semibold tracking-tight',
         className,
       )}
       {...props}
@@ -43,7 +43,7 @@ const components = {
   h5: ({ className, ...props }: { className?: string }) => (
     <h5
       className={classNames(
-        'mt-8 scroll-m-20 text-lg font-semibold tracking-tight',
+        'mt-8 scroll-m-24 text-lg font-semibold tracking-tight',
         className,
       )}
       {...props}
@@ -52,7 +52,7 @@ const components = {
   h6: ({ className, ...props }: { className?: string }) => (
     <h6
       className={classNames(
-        'mt-8 scroll-m-20 text-base font-semibold tracking-tight',
+        'mt-8 scroll-m-24 text-base font-semibold tracking-tight',
         className,
       )}
       {...props}
@@ -61,7 +61,7 @@ const components = {
   a: ({ className, ...props }: { className?: string }) => (
     <a
       className={classNames(
-        'font-medium text-slate-900 underline underline-offset-4 dark:text-slate-300',
+        'font-medium text-zinc-900 underline underline-offset-4 dark:text-zinc-300',
         className,
       )}
       {...props}
@@ -88,7 +88,7 @@ const components = {
   blockquote: ({ className, ...props }: { className?: string }) => (
     <blockquote
       className={classNames(
-        'mt-6 border-l-2 border-slate-300 pl-6 italic text-slate-800 dark:text-slate-400 ',
+        'mt-6 border-l-2 border-zinc-300 pl-6 italic text-zinc-800 dark:text-zinc-400 ',
         className,
       )}
       {...props}
@@ -101,13 +101,13 @@ const components = {
   }: React.ImgHTMLAttributes<HTMLImageElement>) => (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      className={classNames('rounded-md border border-slate-200', className)}
+      className={classNames('rounded-md border border-zinc-200', className)}
       alt={alt}
       {...props}
     />
   ),
   hr: ({ ...props }) => (
-    <hr className="my-4 border-slate-200 md:my-8" {...props} />
+    <hr className="my-4 border-zinc-200 md:my-8" {...props} />
   ),
   table: ({ className, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
     <div className="my-6 w-full overflow-y-auto">
@@ -117,7 +117,7 @@ const components = {
   tr: ({ className, ...props }: React.HTMLAttributes<HTMLTableRowElement>) => (
     <tr
       className={classNames(
-        'm-0 border-t border-slate-300 p-0 even:bg-slate-100',
+        'm-0 border-t border-zinc-300 p-0 even:bg-zinc-100',
         className,
       )}
       {...props}
@@ -126,7 +126,7 @@ const components = {
   th: ({ className, ...props }: { className?: string }) => (
     <th
       className={classNames(
-        'border border-slate-200 px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right',
+        'border border-zinc-200 px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right',
         className,
       )}
       {...props}
@@ -135,7 +135,7 @@ const components = {
   td: ({ className, ...props }: { className?: string }) => (
     <td
       className={classNames(
-        'border border-slate-200 px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right',
+        'border border-zinc-200 px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right',
         className,
       )}
       {...props}
@@ -144,7 +144,7 @@ const components = {
   pre: ({ className, ...props }: { className?: string }) => (
     <pre
       className={classNames(
-        'mt-6 mb-4 overflow-x-auto rounded-lg bg-slate-900 py-4',
+        'mt-6 mb-4 overflow-x-auto rounded-lg bg-zinc-900 py-4',
         className,
       )}
       {...props}
@@ -153,7 +153,7 @@ const components = {
   code: ({ className, ...props }: { className?: string }) => (
     <code
       className={classNames(
-        // 'relative rounded border py-[0.2rem] px-[0.3rem] font-mono text-sm text-slate-600',
+        // 'relative rounded border py-[0.2rem] px-[0.3rem] font-mono text-sm text-zinc-600',
         className,
       )}
       {...props}

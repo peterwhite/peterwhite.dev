@@ -1,31 +1,29 @@
+import { allPosts } from '#/.contentlayer/generated';
 import { PostFeed } from '#/components/PostFeed';
 
 export default function Page() {
+  const posts = allPosts.filter((post) => post.published && post.featured);
+
   return (
     <div className="space-y-12">
       <section id="about">
         <h3 className="mb-4 text-xl font-medium">Peter White</h3>
         <div className="prose prose-zinc dark:prose-invert">
+          <p>Happily building things on the internet since 2008.</p>
           <p>
-            I am a Software Engineer based in Boone, NC. My background involves
-            pushing the limits of what we can build on the backend and how we
-            can experience it on the frontend.
+            Proud to be part of the engineering team at IndyRiot; building
+            better online communities.
           </p>
           <p>
-            Happy to be part of the design infrastructure team at Slack;
-            building tools to help designers and engineers collaborate more
-            efficiently.
-          </p>
-          <p>
-            Outside of technology, I love spending time with my family and
-            hiking in the NC mountains
+            Outside of technology, I spend my time learning Norwegian, walking
+            in nature and listening to podcasts.
           </p>
         </div>
       </section>
 
       <section id="posts" className="pb-8">
         <h3 className="mb-4 text-xl font-medium">Featured Posts</h3>
-        <PostFeed />
+        <PostFeed posts={posts} />
       </section>
 
       <section id="experience">

@@ -2,12 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+body,
+html {
   overscroll-behavior-y: none;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
-
 code {
   counter-reset: line;
+}
+
+a {
+  text-decoration-style: dotted !important;
+  text-underline-offset: 4px;
 }
 
 code > .line::before {
