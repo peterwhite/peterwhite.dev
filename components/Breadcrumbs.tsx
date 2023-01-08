@@ -17,7 +17,7 @@ export function BreadCrumbs() {
     >
       <Link
         href={'/'}
-        className="pr-2 font-medium text-zinc-500 decoration-dotted underline-offset-4 transition hover:text-zinc-800 hover:underline dark:text-zinc-200"
+        className="pr-2  text-zinc-500 decoration-dotted underline-offset-4 transition hover:text-zinc-800 hover:underline dark:text-zinc-200"
       >
         Home
       </Link>
@@ -30,12 +30,12 @@ export function BreadCrumbs() {
               if (segment === 'posts') {
                 return (
                   <React.Fragment key={segment}>
-                    <ChevronRightIcon className="h-4 w-4 text-zinc-600" />
+                    <ChevronRightIcon className="h-4 w-4 text-zinc-500" />
                     <Link
                       href="/posts/"
-                      className="animate-[highlight_1s_ease-in-out_1] rounded-full px-1.5 capitalize"
+                      className="animate-[highlight_1s_ease-in-out_1] rounded-full px-1.5 capitalize text-zinc-500 hover:underline"
                     >
-                      {segment}
+                      Posts
                     </Link>
                   </React.Fragment>
                 );
@@ -45,7 +45,7 @@ export function BreadCrumbs() {
                   <React.Fragment key={segment}>
                     <ChevronRightIcon className="h-4 w-4 text-zinc-600" />
                     <span className="animate-[highlight_1s_ease-in-out_1] rounded-full px-1.5 capitalize">
-                      {segment}
+                      {segment.replace(/-/g, ' ')}
                     </span>
                   </React.Fragment>
                 );
