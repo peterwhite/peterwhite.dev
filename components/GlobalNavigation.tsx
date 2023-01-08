@@ -1,6 +1,7 @@
 'use client';
 
 import { MoonIcon, SunIcon } from '@heroicons/react/solid';
+import Image from 'next/image';
 import Link from 'next/link';
 import { ActiveLink } from './ActiveLink';
 
@@ -13,9 +14,12 @@ export function GlobalNavigation() {
           href="/"
         >
           <div className="rounded-full p-[3px] ">
-            <img
-              src="https://via.placeholder.com/200x200"
-              className="invisible block h-10 w-10 rounded-full"
+            <Image
+              src="/ProfilePicture.png"
+              className="block h-10 w-10 rounded-full"
+              width={200}
+              height={200}
+              alt="Profile Picture"
             />
           </div>
         </Link>
@@ -55,7 +59,7 @@ export function GlobalNavigation() {
             <SunIcon
               className="hidden h-4 w-4 dark:block"
               onClick={() => {
-                localStorage.setItem('theme', 'light');
+                localStorage.setItem('darkMode', 'false');
                 document
                   .getElementsByTagName('html')[0]
                   .classList.toggle('dark');
@@ -64,7 +68,7 @@ export function GlobalNavigation() {
             <MoonIcon
               className="block h-4 w-4 dark:hidden"
               onClick={() => {
-                localStorage.setItem('theme', 'dark');
+                localStorage.setItem('darkMode', 'true');
                 document
                   .getElementsByTagName('html')[0]
                   .classList.toggle('dark');

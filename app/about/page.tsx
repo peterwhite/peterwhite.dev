@@ -1,9 +1,10 @@
+/* eslint-disable react/no-unescaped-entities */
 export default function Page() {
   return (
     <div className="space-y-12">
       <section id="about">
         <h3 className="mb-4 text-xl font-medium">About</h3>
-        <div className="prose prose-zinc prose-headings:text-zinc-200 dark:prose-invert ">
+        <div className="prose prose-zinc dark:prose-invert prose-headings:dark:text-zinc-200 ">
           <p>A self-indulgent about page.</p>
           <div className="mb-8">
             <h2>Links</h2>

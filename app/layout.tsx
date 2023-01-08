@@ -28,10 +28,6 @@ export default function RootLayout({
       className={`${inter.variable} ${jetBrains.variable} invisible antialiased
     `}
     >
-      <Head>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      </Head>
-      <Script src="/theme.js" />
       <body className="relative bg-zinc-100 text-zinc-800 ease-linear selection:bg-vercel-blue/90 selection:text-white dark:bg-zinc-900 dark:text-zinc-200">
         <BackDrop />
 
