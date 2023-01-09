@@ -3,6 +3,7 @@ import { Mdx } from '#/components/mdx';
 import { allPosts } from 'contentlayer/generated';
 import { format } from 'date-fns';
 import Image from 'next/image';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 interface BlogPostProps {
@@ -120,7 +121,8 @@ export default async function Page({ params }: BlogPostProps) {
                 Enjoying this post?
               </h3>
               <p className="text-sm text-zinc-700 dark:text-zinc-400">
-                Join my newsletter or share this post with a friend{' '}
+                <Link href={'/newsletter'}>Join my newsletter</Link> or share
+                this post with a friend{' '}
               </p>
             </div>
 
