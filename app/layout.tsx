@@ -37,7 +37,7 @@ export default function RootLayout({
           <div className="space-y-4 py-6">
             <BreadCrumbs />
 
-            <div className="mt-6"> {children}</div>
+            <main className="mt-6"> {children}</main>
           </div>
 
           <div className="py-4">

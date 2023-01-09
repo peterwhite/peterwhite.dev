@@ -1,3 +1,4 @@
+import ForceScrollUp from '#/components/ForceScrollToTop';
 import { Mdx } from '#/components/mdx';
 import { allPosts } from 'contentlayer/generated';
 import { format } from 'date-fns';
@@ -34,6 +35,7 @@ export default async function Page({ params }: BlogPostProps) {
 
   return (
     <div>
+      <ForceScrollUp />
       <div className="space-y-6">
         <div>
           <h1 className="text-2xl font-extrabold tracking-tight text-zinc-900 dark:text-zinc-200 md:text-4xl ">
