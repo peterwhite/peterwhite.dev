@@ -26,7 +26,7 @@ export default function Page() {
             or if you want to improve the article to help future readers, please
             feel free to{' '}
             <a
-              href="https://github.com/peterwhite"
+              href="https://github.com/peterwhite/peterwhite.dev"
               target="_blank"
               rel="noreferrer"
             >
