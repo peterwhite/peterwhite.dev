@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body,
 html {
   overscroll-behavior-y: none;
   width: 100%;
