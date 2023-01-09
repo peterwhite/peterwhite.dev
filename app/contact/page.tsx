@@ -5,10 +5,7 @@ export default function Page() {
       <div>
         <h3 className="mb-4 text-xl font-medium">Contact Me</h3>
         <div className="prose prose-zinc dark:prose-invert">
-          <p>
-            The best way to contact me is through one of the networks below. You
-            can also email me: hello at this domain.
-          </p>
+          <p>The best way to contact me is through one of the options below:</p>
           <ul>
             <li>
               Twitter: <a href="https://twitter.com/petewht">@petewht</a>
@@ -19,6 +16,7 @@ export default function Page() {
                 https://www.linkedin.com/in/petewht/
               </a>
             </li>
+            <li>Email: hello at this domain</li>
           </ul>
         </div>
       </div>

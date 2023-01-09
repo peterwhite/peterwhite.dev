@@ -2,6 +2,7 @@ import * as React from 'react';
 import Image from 'next/image';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import classNames from 'classnames';
+import { Callout } from './Callout';
 
 const components = {
   h1: ({ className, ...props }: { className?: string }) => (
@@ -160,7 +161,7 @@ const components = {
     />
   ),
   Image,
-  //   Callout,
+  Callout,
   //   Card,
 };
 
