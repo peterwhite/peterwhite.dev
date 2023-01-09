@@ -3,7 +3,9 @@ import { allDocuments } from '#/.contentlayer/generated/index.mjs';
 import { Post, Repost } from '#/.contentlayer/generated';
 
 export default function Page() {
-  const posts = allDocuments.filter((post) => post.published);
+  const posts = allDocuments
+    .filter((post) => post.published)
+    .sort((a, b) => Number(new Date(b.date)) - Number(new Date(a.date)));
 
   return (
     <div className="mb-8 space-y-8">
