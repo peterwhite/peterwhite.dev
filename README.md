@@ -1,4 +1,6 @@
-# Next.js App Directory Playground
+# PeterWhite.dev Personal Website
+
+Part blog, part playground, part excuse to experiment with `/app/` directory. PRs and feedback welcome.
 
 Next.js introduced the `app/` directory (beta). This is the result of the [Layouts RFC](https://nextjs.org/blog/layouts-rfc) previously published for community feedback. This includes support for:
 
@@ -11,13 +13,5 @@ The `app/` directory can coexist with the existing `pages` directory for inc
 
 ## Running Locally
 
-1. Install dependencies: `yarn`
-1. Start the dev server: `yarn dev`
-
-## Documentation
-
-https://beta.nextjs.org/docs
-
-## Leave Feedback
-
-https://github.com/vercel/next.js/discussions/41745
+1. Install dependencies: `npm`
+1. Start the dev server: `npm run dev`
