@@ -16,6 +16,7 @@ Before we jump into a technical fix, let's eliminate the most common Cloudflare 
 2. Page rules which cause infinite loops
 3. DNS rules are incorrect, or Cloudflare is not enabled
 4. Selecting the wrong flexible, strict or full SSL setting
+5. You may have been counting bot traffic in your previous analytics, making an artifically high visitor count. Cloudflare blocks malicious traffic, leading to lower visitor counts.
 
 ## Why have my daily unique visitors dropped after switching to Cloudflare?
 
