@@ -1,13 +1,18 @@
 export function Footer() {
+  const duolingoStreak = Math.ceil(
+    (new Date().getTime() - new Date('08/31/2016').getTime()) /
+      (1000 * 3600 * 24),
+  );
+
   return (
     <div className="text-sm">
       <div className="mb-4 flex w-full flex-row-reverse items-center space-x-0 border-b pb-4 dark:border-zinc-600 sm:flex-row  sm:space-x-2">
         <div className="inline-flex w-full max-w-full flex-col truncate sm:flex-row">
           <p className=" font-medium text-zinc-800 dark:text-zinc-200 ">
-            Not Playing
+            {duolingoStreak} days
           </p>
           <span className=" mx-2 hidden text-zinc-700  sm:block">–</span>
-          <p className="truncate text-zinc-400 ">Apple Music</p>
+          <p className="truncate text-zinc-500 ">🦉 Duolingo Streak</p>
         </div>
       </div>
 
