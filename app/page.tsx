@@ -15,8 +15,9 @@ export default function Page() {
             better online communities.
           </p>
           <p>
-            Outside of technology, I spend my time learning Norwegian, walking
-            in nature and listening to podcasts.
+            Originally from Yorkshire in the UK, Peter has been living in Norway
+            since 2021. Outside of technology, I spend my time learning
+            Norwegian, walking in nature and listening to podcasts.
           </p>
         </div>
       </section>
