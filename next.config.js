@@ -8,6 +8,15 @@ const nextConfig = {
     // Required:
     appDir: true,
   },
+  async redirects() {
+    return [
+      {
+        source: '/blog/guide-what-to-do-if-your-traffic-drops-after-migrating-to-cloudflare',
+        destination: '/posts/cloudflare-traffic-drop',
+        permanent: true,
+      },
+    ]
+  },
 };
 
 
