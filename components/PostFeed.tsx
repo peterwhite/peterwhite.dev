@@ -22,8 +22,8 @@ export const PostFeed = ({ posts }: { posts: BothPosts[] }) => {
                     {post.description}
                   </div>
                   <div className="mt-2 flex space-x-2 font-mono text-sm uppercase text-zinc-800 dark:text-zinc-200">
-                    <span>45345 Views</span>
-                    <span>-</span>
+                    {/* <span>45345 Views</span>
+                    <span>-</span> */}
                     <time dateTime={post.date}>
                       {format(new Date(post.date), 'MMMM dd yyyy')}
                     </time>
