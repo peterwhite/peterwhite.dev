@@ -4,8 +4,7 @@ import { Footer } from '#/components/Footer';
 import { GlobalNavigation } from '#/components/GlobalNavigation';
 import '#/styles/globals.css';
 import { Inter, JetBrains_Mono } from '@next/font/google';
-import Script from 'next/script';
-import Head from 'next/head';
+import { AnalyticsWrapper } from '#/components/Analytics';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -29,6 +28,7 @@ export default function RootLayout({
     `}
     >
       <body className="relative bg-zinc-100 text-zinc-800 selection:bg-vercel-blue/90 selection:text-white dark:bg-zinc-900 dark:text-zinc-200">
+        <AnalyticsWrapper />
         <BackDrop />
 
         <GlobalNavigation />
