@@ -2,7 +2,9 @@ import { allPosts } from '#/.contentlayer/generated';
 import { PostFeed } from '#/components/PostFeed';
 
 export default function Page() {
-  const posts = allPosts.filter((post) => post.published && post.featured);
+  const posts = allPosts
+    .filter((post) => post.published && post.featured)
+    .sort((a, b) => Number(new Date(b.date)) - Number(new Date(a.date)));
 
   return (
     <div className="space-y-12">
