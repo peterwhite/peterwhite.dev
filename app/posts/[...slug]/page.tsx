@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
-interface BlogPostProps {
+export interface BlogPostProps {
   params: {
     slug: string[];
   };
