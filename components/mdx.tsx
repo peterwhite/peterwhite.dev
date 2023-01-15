@@ -61,6 +61,7 @@ const components = {
   ),
   a: ({ className, ...props }: { className?: string }) => (
     <a
+      target="_blank"
       className={classNames(
         'font-medium text-zinc-900 underline underline-offset-4 dark:text-zinc-300',
         className,
