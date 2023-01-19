@@ -126,28 +126,30 @@ export default async function Page({ params }: BlogPostProps) {
               </p>
             </div>
 
-            <div>
-              <h3 className="mb-2 font-semibold text-zinc-700 dark:text-zinc-400">
-                Contents
-              </h3>
-              <div className="block w-48 overflow-y-auto ">
-                {post.headings.map((heading: Heading) => {
-                  return (
-                    <div
-                      key={`#${heading.slug}`}
-                      className="block w-48 text-sm text-zinc-500 "
-                    >
-                      <a
-                        className="mb-3 block hover:text-zinc-700 hover:underline hover:dark:text-zinc-400"
-                        href={`#${heading.slug}`}
+            {post.headings.length > 0 && (
+              <div>
+                <h3 className="mb-2 font-semibold text-zinc-700 dark:text-zinc-400">
+                  Contents
+                </h3>
+                <div className="block w-48 overflow-y-auto ">
+                  {post.headings.map((heading: Heading) => {
+                    return (
+                      <div
+                        key={`#${heading.slug}`}
+                        className="block w-48 text-sm text-zinc-500 "
                       >
-                        {heading.text}
-                      </a>
-                    </div>
-                  );
-                })}
+                        <a
+                          className="mb-3 block hover:text-zinc-700 hover:underline hover:dark:text-zinc-400"
+                          href={`#${heading.slug}`}
+                        >
+                          {heading.text}
+                        </a>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>
