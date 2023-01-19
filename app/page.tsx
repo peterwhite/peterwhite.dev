@@ -86,6 +86,24 @@ export default function Page() {
           <li className="gap-4 py-4  sm:pl-8">
             <div>
               <div className="mb-1 font-medium text-zinc-800 dark:text-zinc-200">
+                <span>Stream</span>
+              </div>
+              <div>
+                <div className="prose prose-zinc dark:text-zinc-400 dark:prose-invert">
+                  Stream was a property management platform, which aimed to make
+                  online communities for apartment blocks and residential
+                  communities. MVP was well recieved but failed to find market
+                  fit.
+                </div>
+                <div className="mt-2 font-mono text-sm uppercase text-zinc-800 dark:text-zinc-200">
+                  Founder :: 2019 - 2020
+                </div>
+              </div>
+            </div>
+          </li>
+          <li className="gap-4 py-4  sm:pl-8">
+            <div>
+              <div className="mb-1 font-medium text-zinc-800 dark:text-zinc-200">
                 <span>Bytemark</span>
               </div>
               <div>
