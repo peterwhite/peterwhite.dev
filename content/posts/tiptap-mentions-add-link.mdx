@@ -1,0 +1,29 @@
+---
+title: How to add a link to a Tiptap mention
+date: '2023-01-15'
+description: 'A quick tip for TipTap, a headless ProseMirror editor'
+featured: true
+image: '/images/blog/tiptap-mentions/tiptap_mentions.jpeg'
+---
+
+At IndyRiot, we use TipTap as our rich text WYSIWYG editor. We use the [mention extension](https://tiptap.dev/api/nodes/mention) to allow users to tag other users, driving engagement and helping communities thrive.
+
+By default, the mention extension does not include support for linking to other content. However, it is easy to create your own mention extension and add this feautre.
+
+1. Copy the whole mention extension file [from here](https://github.com/ueberdosis/tiptap/blob/main/packages/extension-mention/src/mention.ts)
+2. Modify the renderHTML function to swap 'span' for 'a'
+3. Add a href to mergeAttributes, using a value from your suggestion function
+4. Done!
+
+```javascript
+    renderHTML({ node, HTMLAttributes }) {
+        return [
+            'a',
+            mergeAttributes({ 'data-type': this.name }, { 'href': `/user/${HTMLAttributes['data-id']}` }, this.options.HTMLAttributes, HTMLAttributes),
+            this.options.renderLabel({
+                options: this.options,
+                node,
+            }),
+        ]
+    },
+```
