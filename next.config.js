@@ -15,6 +15,21 @@ const nextConfig = {
         destination: '/posts/cloudflare-traffic-drop',
         permanent: true,
       },
+      {
+        source: '/projects',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/services',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/blog',
+        destination: '/posts',
+        permanent: true,
+      },
     ]
   },
 };
