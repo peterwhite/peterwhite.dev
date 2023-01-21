@@ -10,12 +10,13 @@ export default function Page() {
   return (
     <div className="mb-8 space-y-8">
       <div>
-        <h3 className="mb-4 text-xl font-medium">Ramblings</h3>
+        <h3 className="mb-4 text-xl font-medium">Ramblings &amp; Reposts</h3>
         <div className="prose prose-zinc dark:prose-invert">
           <p>
             Here you will find my ramblings on building products, growing
-            startups and more. I always appreciate feedback or suggestions for
-            future blog posts. You can find me on{' '}
+            startups and more. I also share links from the web I find
+            interesting, with a short comment. I always appreciate feedback or
+            suggestions for future blog posts. You can find me on{' '}
             <a
               href="https://twitter.com/petewht"
               target="_blank"
