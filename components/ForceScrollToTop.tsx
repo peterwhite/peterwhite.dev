@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 
-// This is required as at the time of writing Next13 scrolls the inserted children into view on navigate, not the whole page
+// This was required required before 13.1.6-canary.1, now scrolling works as expected AFAIK
 
 export default function ForceScrollUp() {
   useEffect(() => {
