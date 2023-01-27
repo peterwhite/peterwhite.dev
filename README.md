@@ -9,9 +9,7 @@ Next.js introduced the `app/` directory (beta). This is the result of the [La
 - **Streaming:** Display instant loading states and stream in updates.
 - **Suspense for Data Fetching:** `async`/`await` support and the `use` hook for component-level fetching.
 
-The `app/` directory can coexist with the existing `pages` directory for incremental adoption. While you **don't need to use the `app/` directory** when upgrading to Next.js 13, we're laying the foundations to build complex interfaces while shipping less JavaScript.
-
 ## Running Locally
 
-1. Install dependencies: `npm`
-1. Start the dev server: `npm run dev`
+1. Install dependencies: `npm` (Next Canary + ContentLayer requires --force right now (27/01/23))
+2. Start the dev server: `npm run dev`
