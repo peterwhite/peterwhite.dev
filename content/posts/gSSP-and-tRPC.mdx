@@ -1,0 +1,76 @@
+---
+title: How to use GetServerSideProps with tRPC
+date: '2023-02-01'
+description: gSSP and tRPC is your ticket to a better NextJS experience. Check out how to do it here, with code samples
+featured: true
+---
+
+GetServerSideProps (gSSP) is your ticket to a better NextJS experience. With gSSP running on the backend, you can enjoy the performance of a static site and the interactivity of a client-side rendered site.
+
+Because gSSP runs _on the backend_, anything you do in your router can also be done in gSSP. Use secrets here, server logic, whatever, they'll be hidden from the client.
+
+Two options for using gSSP with tRPC and NextJS: extract a function or use SSG helpers.
+
+## Extract a Function
+
+1. Extract the logic from that procedure in a function. This will usually take your database client and your Zod input as parameters
+2. In your GetServerSideProps, import that function and call it with the database client and the desired input
+3. Use `useQuery` hook in your page component. You'll need to set initialData in your useQuery to your props
+
+Downside: not type-safe
+
+```javascript
+export default function Page(props) {
+  const { data } = trpc.posts.getOne.useQuery(
+    { id: props.id },
+    { initialData: props.post },
+  );
+  return <div>{data.title}</div>;
+}
+
+export const getServerSideProps = async (ctx) => {
+  const post = await getPost({ prisma, input: { id: ctx.params.id } });
+  return {
+    props: {
+      id,
+      post,
+    },
+  };
+};
+```
+
+## SSG Helpers
+
+A type-safe, simpler way to work with gSSP and tRPC is to use the SSG helpers.
+
+1. Use createProxySSGHelpers, passing the router, context and your transformer to it
+2. Use prefetch the call the procedures you want. You don't need to assign these to a variable
+3. Pass ssg.dehydrate() to the gSSP props.
+
+Result: server-side content magically re-hydrated (thanks to [Tanstack](https://tanstack.com/query/v4/docs/react/reference/hydration)), type-safe.
+
+```javascript
+export default function Page(props) {
+  const { data } = trpc.posts.getOne.useQuery({ id: props.id });
+  return <div>{data.title}</div>;
+}
+
+export const getServerSideProps = async (ctx) => {
+  const ssg = createProxySSGHelpers({
+    router: appRouter,
+    ctx: await createContext(context) // replace with your own context,
+    transformer: superjson,
+  });
+
+  await ssg.prefetch('posts.getOne', { id: ctx.params.id });
+
+  return {
+    props: {
+      trpcState: ssg.dehydrate(),
+      id,
+    },
+  };
+};
+```
+
+Note that prefetch does not return a result, and never throws an error. You can use fetch instead if you need this - for example, to transform the output or do something else with it.
