@@ -1,0 +1,95 @@
+---
+title: Utilizing Promises, Context and Hooks for a Modern Alternative to window.confirm
+date: '2023-02-16'
+description: Upgrade your clunky native `window.confirm` to a custom modal, whilst keeping the same confirm functionality. Includes Typescript demo code
+featured: true
+---
+
+Let's upgrade our clunky `window.confirm` to our own custom modal, whilst keeping the same confirm functionality. We'll use hooks, context and promises to do it.
+
+Context allows your app to receive information from distant parents without passing it as props. With [useContext](https://beta.reactjs.org/reference/react/useContext), your app's top-level component can pass props to all components below, no matter how deep they are in the hierarchy, without endless prop drilling.
+
+This will allow us to access our modal from anywhere in our app.
+
+```javascript
+import { createContext, useContext, useRef, useState } from 'react';
+
+interface ConfirmDialogProps {
+  title: string;
+  description: string;
+  confirmText?: string;
+}
+
+// This is a context that is used to hold the data for the confirmation dialog
+const ConfirmDialog = createContext<
+  (data: ConfirmDialogProps) => Promise<boolean>
+>(() => {
+  throw new Error('ConfirmDialogProvider not found');
+});
+
+// This is a component that will wrap your app and provide the context
+export function ConfirmDialogProvider({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+
+  // This is the state that will hold the data of the confirmation dialog, such as the title
+  const [state, setState] = useState({ visible: false });
+
+  // This is a reference to the fn that will be called when the user confirms or cancels
+  const fn = useRef<(choice: boolean) => void>(() => false);
+
+  // This opens the modal, and returns the confirm or cancel promise
+  const confirm = (data: ConfirmDialogProps): Promise<boolean> => {
+    return new Promise((resolve, reject) => {
+      if (state.visible) {
+        reject(new Error('Confirm already called'));
+      }
+      setState({ ...data, visible: true });
+      fn.current = (choice: boolean) => {
+        resolve(choice);
+        setState({ visible: false });
+      };
+    });
+  };
+
+  return (
+    <ConfirmDialog.Provider value={confirm}>
+      {children}
+      {/* Replace me with your Modal component */}
+      <Modal
+        {...state}
+        onCancel={() => fn.current(false)}
+        onConfirm={() => fn.current(true)}
+      />
+    </ConfirmDialog.Provider>
+  );
+}
+
+// We use this hook to consume the context
+export default function useConfirm() {
+  return useContext(ConfirmDialog);
+}
+```
+
+## Using the confirm dialog
+
+1. Wrap where you want to use confirm with the `ConfirmDialogProvider` provider
+2. Invoke as in the example code below
+
+```jsx
+const confirm = useConfirm();
+
+const handleDeleteAll = async () => {
+  const choice = await confirm({
+    title: 'Delete all',
+    description: 'Are you sure you want to delete everything?',
+    confirmBtnLabel: 'Yes',
+  });
+
+  if (choice) {
+    // If true, something happens. You can optionally handle a false status
+  }
+};
+```
