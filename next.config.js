@@ -11,6 +11,11 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: '/sitemap.xml',
+        destination: '/api/sitemap',
+        permanent: true,
+      },
+      {
         source: '/blog/guide-what-to-do-if-your-traffic-drops-after-migrating-to-cloudflare',
         destination: '/posts/cloudflare-traffic-drop',
         permanent: true,
