@@ -1,11 +1,11 @@
 ---
-title: European Alternatives to Vercel
+title: 'European Alternatives to Vercel 🇪🇺'
 date: '2023-03-01'
-description: 'A summary of available European alternatives to Vercel'
+description: 'A discussion of EU data residency issues and EU alternatives to Vercel'
 featured: true
 ---
 
-If you're an EU company considering hosting data in the US, there are some important legal issues to keep in mind.
+If you're an EU company considering using Vercel (a US-based company) for production data, there are some important legal issues to keep in mind.
 
 The EU's General Data Protection Regulation (GDPR) sets high standards for protecting personal data of EU residents, which includes getting explicit consent from individuals and using adequate security measures. However, the US has a different legal framework for data protection, with various state and federal laws that may not align with GDPR requirements.
 
@@ -43,3 +43,12 @@ Sadly your options are limited, though I will revisit and update this post as I 
 
 - Self Host: NextJS can be self-hosted [with some limitations](https://nextjs.org/docs/deployment). Projects like [OpenNext](https://open-next.js.org) are trying to address these
 - AWS: If you consider EU regions on AWS compliant, you can use [SST](https://sst.dev) to deploy
+- Contact Vercel: [Vercel offer support](https://vercel.com/guides/can-i-use-vercel-to-deploy-to-a-private-cloud) on reaching your security and legal requirements
+
+## Best of both worlds?
+
+It's also possible to get the development benefits of Vercel with the protections of EU data residency.
+
+At indyRiot, we use Vercel to support our development work and our engineering team love it. Vercel offers unmatched git workflows, instant preview URLs with comments and rapid deployments, so we can iterate quickly and get feedback quickly from stakeholders.
+
+Once the work is approved, the production build is deployed to our own cloud, keeping customer data safely in the EU.
