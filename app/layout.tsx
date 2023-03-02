@@ -3,8 +3,16 @@ import { BackDrop } from '#/components/BackDrop';
 import { Footer } from '#/components/Footer';
 import { GlobalNavigation } from '#/components/GlobalNavigation';
 import '#/styles/globals.css';
-import { Inter, JetBrains_Mono } from '@next/font/google';
+import { Inter, JetBrains_Mono } from 'next/font/google';
 import { AnalyticsWrapper } from '#/components/Analytics';
+import type { Metadata } from 'next';
+import Script from 'next/script';
+
+export const metadata: Metadata = {
+  title: 'Peter White',
+  description:
+    'Full Stack Developer in Norway, happily building things on the internet since 2008',
+};
 
 const inter = Inter({
   subsets: ['latin'],
@@ -28,6 +36,7 @@ export default function RootLayout({
     `}
     >
       <body className="relative bg-zinc-100 text-zinc-800 selection:bg-vercel-blue/90 selection:text-white dark:bg-zinc-900 dark:text-zinc-200">
+        <Script src="/theme.js" />
         <AnalyticsWrapper />
         <BackDrop />
 

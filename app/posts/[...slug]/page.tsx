@@ -4,6 +4,7 @@ import { format } from 'date-fns';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
 
 export interface BlogPostProps {
   params: {
@@ -11,12 +12,17 @@ export interface BlogPostProps {
   };
 }
 
-export async function generateStaticParams(): Promise<
-  BlogPostProps['params'][]
-> {
-  return allPosts.map((post) => ({
-    slug: post.slugAsParams.split('/'),
-  }));
+export async function generateMetadata({
+  params,
+}: {
+  params: BlogPostProps['params'];
+}): Promise<Metadata> {
+  const slug = params?.slug?.join('/');
+  const post = allPosts.find((post) => post.slugAsParams === slug);
+  if (!post) {
+    return {};
+  }
+  return { title: post.title, description: post.description };
 }
 
 export default async function Page({ params }: BlogPostProps) {
@@ -27,7 +33,6 @@ export default async function Page({ params }: BlogPostProps) {
     notFound();
   }
 
-  // TODO: Generate type ContentLayer instead
   interface Heading {
     slug: string;
     text: string;
