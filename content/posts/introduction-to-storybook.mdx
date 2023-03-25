@@ -1,0 +1,162 @@
+---
+title: 'Introduction to Storybook: Building component driven UIs faster'
+date: '2023-03-25'
+description: 'A lightning talk I gave on Storybook in 2022, focused on how engineering and design teams can come together to adopt Storybook successfully'
+featured: true
+---
+
+## Slides
+
+<div className="">
+  <iframe
+    src="https://docs.google.com/presentation/d/e/2PACX-1vQ0ljQ7PdXGproId0Xo3-RRhK4s_rw_PECI0I9Qr_6Q1FWEjjCXnOwx1NqlENUZkZE-S8FuT291s8yj/embed?start=false&loop=false&delayms=60000"
+    frameborder="0"
+    className="aspect-video w-full"
+    allowfullscreen="true"
+    mozallowfullscreen="true"
+    webkitallowfullscreen="true"
+  ></iframe>
+</div>
+
+## Audio
+
+<iframe
+  src="https://drive.google.com/file/d/1I_TyjSLCzFa5PX2o9I5leLB9c09YOK2E/preview"
+  width="640"
+  height="360"
+  frameborder="0"
+  allowfullscreen
+></iframe>
+
+## Descript
+
+<iframe
+src="https://share.descript.com/embed/jsPX3v7pYAa"
+width="640"
+height="360"
+frameborder="0"
+allowfullscreen
+
+> </iframe>
+
+## Text Transcript
+
+So this presentation is about Storybook which is a tool that the engineering team would want to adopt. But I wanna start at quite a high level about what component driven UI are and what that means for our product development.
+
+**Slide 3:** So the subtitle of this presentation was Building Component Driven UIs Faster. But what is a component driven UI? So components are standardized, interchangeable blocks, and I've got a lot of technical mumbo jumbo and a fancy illustration on the screen.
+
+But a great way of thinking about it is Lego blocks. Rather than you building bespoke plastic for every building project that you're gonna do, buying all that equipment in just to build a space rocket, why not reuse the Lego blocks you already have?
+
+You could make a rocket, a house, a car, anything you could imagine, because all lego is this interchangeable system for building anything you can [00:01:00] imagine with.
+
+**Slide 4:** So here we have an example on the right of a UI that's been built with components. So you see the whole page is called home page. There's a nav bar there. There's a title, there's a search box, there's a submit button, and the cards that describe the hotel, they're cards built of card content.
+
+This brings a few benefits, which I mentioned before with the Lego block metaphor, and the first one is reusability. You can reuse the same piece many times over your whole project that piece is interchangeable. It doesn't need to know what the other pieces do to work together. It just fits with them and helps you build really cool things really, really quickly.
+
+So if we look at our Book Awesome Hotels website, we've got there [00:02:00] to look at that star component . Sure it's, been designed to come in that card content, but we could reuse that star component for the hosts and it could be reused in other places just like the Lego block that we talked about earlier on.
+
+Testability. It's so much easier to test things in isolation than it is to test them together. So if you wanted to test this whole webpage, it's quite complicated in terms of interactions, but if you just wanted to check that the star counter shows four stars when something's rated four stars or one star when it's rated one star and that they can click it and change and rate their star value that's much easier to define at that component level rather than thinking about the whole page together.
+
+But the joy is once you've tested all the components, you've obviously tested the whole page without having to keep those complicated mental models involved a [00:03:00] testing process.
+
+The third one is efficiency. Using a component based approach speeds everything up. Because you've got pre-made components that are ready to go, for use cases you couldn't even possibly imagine right now. So that button can be remixed next to that review. You can reuse that heading without totally having to rethink what a heading looks like in the new context.
+
+And as that component library grows, your time to deliver value to customers drops and ultimately drops costs. And we move quicker and we grow quicker as a company from taking a component driven approach.
+
+The final two points are a rehash of what I've said before. Consistency. Just, you use those Lego blocks, you use them in the same way and they look the same each time. It's just consistent.
+
+And finally, in maintainability. So if we go back to our Lego metaphor, [00:04:00] you've built a house , you've got a nice blue block above the door of the house and you wanna swap it for a red block. You just unclip the blue block and replace it with the red block. It's so much easier than having to destroy your Lego masterpiece and watch it crumbe to the ground, to just build it back up again to just replace one block.
+
+So to go back to this hotels example, if we wanted to make that little star component not quite so pink, we decided we want to make it yellow, or we want to change our rating system entirely to be thumbs up, double thumbs up, thumbs down. You can just swap out that one component without having to take that whole webpage apart which would be a, a much more significant change.
+
+**Slide 5:** So those are the benefits of component driven UI, which is what Storybook helps [00:05:00] engineering and design teams to deliver.
+
+So if we start in the middle here, this component library is where your components live. You can totally just start using a component library without Storybook. . You can put all the things in one place in a fixed structure, but what Storybook does is it gives you a place that's separate to your app to see those components in action and to experiment with them as well.
+
+So with Storybook documenting your components in isolation, there's so much easier to reuse than having to go into your app, find the star rating, and remember that that is an individual component. , you can just go into Storybook and you'll be able to see exactly what it looks like.
+
+**Slide 6:** I'll show you how this works here. So this on the right is the Storybook UI and don't worry, I won't go into too [00:06:00] much detail about it cause this is quite a high level chat. This is what Storybook will look like when you log in and have a look at it. So what you do is you create a component in the app as per usual Storybook doesn't mean changing that sort of flow.
+
+Once you've made your component, you create a story which describes all the interesting states of a component. So here we have a button, and the interesting states of a component are primary, secondary, large, and small. Then below that we have some controls. So you could, whatever you might want to change in your product are represented by the controls here.
+
+So you could set the background color of the button you could set, whether it's a primary button or not the size of it, or change where it says button to anything else. This effectively lets you set the props on that [00:07:00] component within Storybook in the same way you would do it in the application.
+
+Let's move on to a live example! Demo time is always nerveracking!
+
+**Slide 7:** So who uses Storybook and what does it look like? So all these great companies and thousands of others have adopted Storybook as a way of implementing component driven design in their respective organizations. So The Guardian does it, Adobe does it, the UK Government uses Storybook to make really beautiful and really boring looking tax forms. GitHub uses Storybook and I thought that might be the most interesting example for us to look at very briefly right now.
+
+So I've just jumped into GitHub's Storybook. And you will see that I'm looking at a at a text input here. Here you can see that we have [00:08:00] an input and you can interact with it. So you could put in, hello my name is Peter.
+
+Great. And we have various controls for how that input should behave. So you could disable it, you could change it to a loading state and you'll see on the right there, we've got the little spinner happening there. You can turn that off. We can change the size of it here. We can change whether it's erroring or not. And these are all things that designers spend a lot of time thinking about. These are all things that are really important for the usability of our product but representing them outside of a product enables you to use them in isolation and to test that these appear as they should. And as I said, as well, you want to represent the interesting states of the text input in the side here, [00:09:00] and all these are in the text input component there.
+
+So, that's a very brief look at how Storybook works just for that text input component, but it also serves as the point of reference just for the team as a whole when we're reviewing things, so it automatically documents what props a text input might expect here. And we can just scroll through this and we get this beautiful documentation just automatically generated for everything that we have stories defined for in Storybook.
+
+And there's also other features within here, for example accessibility. We could see how this is gonna look for someone with colored blindness conditions here. So someone who can't see red, this invalid state isn't quite so helpful , so could we improve this? Could we show something else in the UI to make that easier to use?
+
+Also comes in with built-in [00:10:00] tools for analyzing responsiveness as well. So you can resize the component to see how it looks on mobile and how it looks on web.
+
+I'll just jump back into the the presentation here. Great.
+
+**Slide 8:** So that's a really quick look at how Storybook works in practice at GitHub, they have a very fleshed out Storybook that's publicly available so if anyone wants to see that for a bit of inspir. and just ping me and I'll send you that link.
+
+The next thing that Storybook does is unlock testing opportunities at that component level. I'm gonna keep this super high level cause I realize we would've run out of time for my original 15 minute aim now. So keep it brief.
+
+**Slide 9:** The first thing that Storybook does is it introduces snapshot testing. So when you're working on one of these components in isolation, it's a [00:11:00] way of checking you've not broken any of those other interesting states while you've made that change, it will see whether the, the DOM has shifted from a baseline before. So this helps us catch issues with inputs buttons, et cetera, before they make it to production while we're basically still at the component design level.
+
+**Slide 10:** Next thing and something I could do a whole of a talk on is accessibility testing. I use the example of colorblindness, but that can be quite obscure if you, if you don't have that accessibility need. Ultimately accessibility doesn't mean disability. There's all sorts of times when we could use more accessible user interfaces.
+
+For example, you're on the metro and you're trying to fill a form in with one hand while you've got a coffee in the other hand, that is an accessibility need. And if we just add tab index to [00:12:00] our forms, they can jump through with one hand they can fill it in, they can type submit, and they don't drop their coffee.
+
+Even tiredness or not paying attention is an accessibility need, and what Storybook does is we don't really have to think about all this. It runs an add-on called AXE within Storybook and it flags when we are not meeting currently US standards for accessibility. And that's super important as we go for larger enterprise deals or government deals where they have legal accessibility requirements.
+
+And it's a good thing for us as well to just have user interfaces that are just really easy for everybody to use.
+
+**Slide 11:** This again is one I could do a deep dive on, but you can do interaction testing in Storybook as well. Rather than doing interaction testing at the purely product high level, you can also do it on an individual component. So for example, when you fill in the signup [00:13:00] form, how should it act when a required field is missing? Our front end validation fails as your email address is just not an email address. And this can be built into Storybook, and we just know that that signup form's gonna behave as we expect it to. Even when it's decoupled from the backend you can mock up this interaction.
+
+**Slide 12:** Cool. So looking into the future, let's say there's lots of conversations that follow as to how and if we adopt component driven design and if Storybook is the right tool for the job. So I've got a slide here to just reiterate some of the benefits of Storybook. .
+
+So if we have better testing at the component level, less things break in production. That means less late nights. That means less emergency fixes it means a better life for everybody involved in the product.
+
+[00:14:00] It makes communication easier between product design and engineering rather than saying the input on the third page of the activities feed doesn't display properly in these conditions, you can link to the Storybook component, that interesting state that we're talking about and said this, this doesn't behave as we expect. And that bug will be fixed everywhere that that component is used. And thanks to the regression testing that's on there, the DOM snapshot testing we'll know whether that fix affects anywhere else in the product as well.
+
+Next, it's easier to prototype things using these reusable Lego blocks. Our first version can just remix things together from a component library that we already have, and then we can add more interesting functionality to those later on or make new components as we see fit.
+
+Ultimately, adopting Storybook is an investment to unlock these benefits [00:15:00] in the longer term. You do have to write the stories and testing and that means a bit of a change for how teams work together.
+
+So I've got the design on the left here and the engineering commitments on the right. So I'll start with design, not to pick on design, but because it's on the left. So the change to adopt Storybook for the design team is that there's a commitment to design with thinking about these components in.
+
+When we start with the design idea of a component and deliver it as a component, that works. But if we start with a page and then engineering tries to break it down into components or vice versa, we're speaking different languages. So it's really important we're all bought-in component driven ui before we proceed with this.
+
+That feeds into understanding that changing that input that we use on entire website is going to change it [00:16:00] globally. So if you have a very special circumstance where an input acts differently, that might be better as a separate component. It might be worth reconsidering whether we actually need that additional state as well to just keep things simple at a product level.
+
+And the final thing is to review Storybook over product. If you see a problem in the product, go and look in Storybook and report the bug as something's wrong with the component and that it can be fixed at the component level and go through all that testing that we talked about.
+
+On the engineering side of it, we have to agree what a completed component is. Storybook requires that a story is written for each component, and if we want the benefits of automated testing on those, it does require a bit more work. So we have to agree what bits of that work we want to do, how much we want to invest in that ecosystem, [00:17:00] and then just try and keep standards high.
+
+The next one is to publish the Storybook publicly. There's nothing secret in a Storybook on that slide I showed earlier on. You have a government website, you have GitHub, you have Adobe. They just publish these on public URLs so that they can easily talk about their design language, they can show it to people who are coming into the company, and ultimately it's something that you should be proud, cause it's an expression of your brand and product at the component level.
+
+And finally, to just sync with design. We're not gonna propose making components that we don't need. And if we see something that's wrong, we're gonna go back to the component level, talk to design, and try and fix it there.
+
+Cool. So that is a very high level introduction to. Storybook and I'm really looking forward to talking with people about it and how we could adopt it here. So if anyone has any [00:18:00] questions or comments, I'd love to hear them.
+
+## Summary
+
+Building user interfaces (UIs) can be a tedious and time-consuming process. However, adopting an atomic design system can make the process faster and more efficient. In this post, we'll explore what component-driven UI means, the benefits of component-driven UI, and how Storybook can be used as a tool for UI development.
+
+### What Does Component Driven UI Mean?
+
+Component-driven UI is a development and design practice of building UIs with modular components. UIs are built from the "bottom up," starting with basic components and progressively combining them to assemble screens. Components are built in isolation, and their states are defined. This approach allows developers to build UIs with standardized, interchangeable building blocks or LEGO blocks.
+
+### What Are the Benefits of Component Driven UI?
+
+Component-driven UI has several benefits, including:
+
+1. **Reusability** - Using components allows developers to reuse the same piece many times over many projects. Each piece is self-contained and interchangeable with other pieces.
+2. **Testability** - Testing components individually is much more manageable than testing an entire system all at once. If a developer develops self-contained components and individual pieces do what they are supposed to do, they can be confident that they will fit together with all of the other pieces without any issues. Storybook unlocks more formal testing opportunities through snapshot, accessibility, and interaction testing.
+3. **Efficiency** - Using a component-based approach will speed up every step in the process. When components live in a central library, team members can use, add, or update them at any time during the process. As the component library grows, the rate of delivery will also grow as the cost and time-to-market go down.
+4. **Consistency** - Having a robust component library ensures user experience consistency across all projects by acting as the source of truth.
+5. **Maintainability** - Component-based applications are easier to maintain and less risk to evolve. It's easy to change one thing without affecting the rest of the system.
+
+### How Does This Change the Contract Between Engineering and Design?
+
+Design and engineering teams have to agree on what a completed component is, publish the Storybook publicly so stakeholders can give feedback, and use as few components as possible, to avoid specialisation bloat. Storybook should be used as the "source of truth" where possible, with reviews and feedback given based on components rather than the overall product.
