@@ -11,7 +11,9 @@ export function Footer() {
           <p className=" font-medium text-zinc-800 dark:text-zinc-200 ">
             🦉 {duolingoStreak} days
           </p>
-          <p className="truncate pl-2 text-zinc-500 ">Duolingo Streak</p>
+          <p className="truncate pl-2  text-zinc-700 dark:text-zinc-400 ">
+            Duolingo Streak
+          </p>
         </div>
       </div>
 
