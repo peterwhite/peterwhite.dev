@@ -13,6 +13,15 @@ code {
   counter-reset: line;
 }
 
+details > summary {
+  list-style: none;
+}
+
+details > summary::marker, /* Latest Chrome, Edge, Firefox */
+details > summary::-webkit-details-marker /* Safari */ {
+  display: none;
+}
+
 a {
   text-decoration-style: dotted !important;
   text-underline-offset: 4px;

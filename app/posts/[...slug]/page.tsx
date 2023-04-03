@@ -98,7 +98,7 @@ export default async function Page({ params }: BlogPostProps) {
 
           {post.headings.length > 0 && (
             <details className="mt-8 block lg:hidden ">
-              <summary className="flex cursor-pointer list-none items-center font-semibold text-zinc-700 decoration-dotted hover:underline dark:text-zinc-200 lg:hidden">
+              <summary className="flex cursor-pointer items-center font-semibold text-zinc-700 decoration-dotted hover:underline dark:text-zinc-200 lg:hidden">
                 <span>Contents</span>
                 <svg
                   className="ml-2 h-4 w-4"
