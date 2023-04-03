@@ -74,7 +74,7 @@ Before you go ahead and pick PlanetScale, decide whether you need referential in
 
 With PlanetScale, there are no foreign key constraints. This is because of how PlanetScale approaches sharding. However, this is not a deal-breaker for us, as we can still use Prisma's `@relation` directive to 'enforce' referential integrity.
 
-This may have a pricing impact, as PlanetScale's pricing is based on the number of rows reads. So, where the foreign key have created an index before, you should manually add an index, otherwise PlanetScale will have to scan the entire table to find the row you're looking for. Thankfully, Prisma automatically suggests indexes to add to your schema with their VSCode extension.
+This may have a pricing impact, as PlanetScale's pricing is based on the number of rows reads. So, where the as some database offerings would have automatically created a index based on the foreign key before, you should manually add an index, otherwise PlanetScale will have to scan the entire table to find the row you're looking for. Thankfully, Prisma automatically suggests indexes to add to your schema with their VSCode extension.
 
 ## Summary
 
