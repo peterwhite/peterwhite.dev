@@ -1,0 +1,73 @@
+---
+title: Why we chose PlanetScale as our database provider
+date: '2023-04-03'
+description: "PlanetScale is a database provider that offers a unique approach to scaling databases. We chose PlanetScale as our database provider for our new product, and we're excited to share why."
+featured: true
+---
+
+At indyRiot, we went through a long evaluation process to find the right database provider for our new product. We wanted:
+
+- Compatibility with Prisma to provide type-safety and a great developer experience
+- Scalability and high availability at a reasonable price
+- First-class developer experience
+- Minimal DevOps overhead, including no need to manage a database cluster
+
+We found PlanetScale to be the best fit for our needs. In this post, I'll share why we chose PlanetScale as our database provider.
+
+## What is PlanetScale?
+
+PlanetScale is a serverless, MySQL-compatible database that offers horizontal sharding, non-blocking schema changes, and other features for scaling databases. It is powered by Vitess, an open-source database technology that companies like YouTube, Slack, and GitHub use to provide horiztonal scaling on top of MySQL without changing application code.
+
+PlanetScale is an ambitious product, bravely calling themselves ["The Future Database"](https://planetscale.com/principles), and they're not wrong.
+
+Here's a quick summary of their principles:
+
+1. Easy to operate: The Future Database must fit into everyone's DevOps workflows and be usable by any developer without the need for a specialist hire. It needs to be operable by everyone, with features like database branching, autoscaling, and usage-based billing.
+2. Fundamentally reliable: The Future Database must be battle-tested and proven at high demands, respect ACID, and put trustworthiness at the forefront.
+3. Serverless by default: Making the Future Database serverless by default ensures it's easy to operate while being fundamentally reliable. Teams can pay only for what they use and never worry about vCPUs or node pools again.
+4. Interoperable: The Future Database will be consumable by any client, with unlimited connections and intelligent query routing.
+5. Distributed globally, locally available: The Future Database will be globally distributed to scale rapidly to new regions while giving users a great experience with locally available data.
+6. Learning, optimizing: The Future Database will be intelligent, learning and optimizing on behalf of develipers. Imagine a database that can automatically shard based on geographical demand, or optimize queries for you.
+7. Linearly horizontally scalable: The Future Database will scale intelligently and without a blip on the status page, without requiring a maintenance window or downtime.
+
+With features like branching, non-blocking schema changes, instant reversions, it provides a great developer experience without the need for a large team to implement or maintain it.
+
+If you are looking for a database that provides scalability, reliability, and a great developer experience, PlanetScale might be worth considering.
+
+## Why we chose PlanetScale
+
+### Compatibility with Prisma
+
+If you're looking for an open-source ORM to work with MySQL, Postgres, or MongoDB, you might want to consider Prisma. Prisma is the best choice if you value productivity, developer experience, and type-safety. However, if you prefer to write raw SQL queries or need full control, you might want to look elsewhere.
+
+One of Prisma's main benefits is its declarative schema, which is easy to understand, even for developers with no SQL experience. The schema is then transformed into types, enabling you to interact with your database in a type-safe way with intelligent autocompletion that matches your schema.
+
+After using Prisma on other projects, we were desperate to use it again. Fortunately, PlanetScale's MySQL compatibility allowed us to integrate Prisma with ease. By following [the guide here](https://planetscale.com/docs/tutorials/automatic-prisma-migrations#introduction) (tldr: use `prisma db push` not `prisma migrate`), we were able to get up and running quickly without any issues.
+
+If you value productivity, developer experience, and type-safety, Prisma is the right choice for you.
+
+### Scalability and high availability at a reasonable price
+
+As a growing startup, we needed a database provider that could scale with us as we grew. PlanetScale's horizontal sharding and non-blocking schema changes allow us to know we can scale in the future, without spending time worrying about it today.
+
+Additionally, the unlimited connections offered by PlanetScale meant we could handle as many requests as we needed without worrying about hitting connection limits. This was essential as we use stateless serverless functions, meaning connections are not persisted between requests.
+
+### First-class developer experience
+
+One of the most significant selling points for us was PlanetScale's developer experience.
+
+With PlanetScale, branching isn't just for your code – it's for your database schemas too. This innovative approach lets you test schema changes before applying them to your production database, ensuring a seamless and error-free transition. Just as developers create branches in their version control system to make changes to their code, PlanetScale enables branching for database schemas, merging the worlds of code and data.
+
+This branching ability doesn't just make life easier for developers; it also creates a safety net. Developers can work with their own pristine remote databases, free from the fear of impacting their colleagues' work. It's like having your own sandbox, but with the power and convenience of a full-fledged database.
+
+But PlanetScale's first-class developer experience doesn't end with branching. Another game-changing feature is its non-blocking schema changes. This magic feature allows us to make alterations to our database schema without impacting its availability.
+
+PlanetScale guides you through the process, meticulously analyzing your schema changes. It detects conflicts and data issues, applying your modifications in a non-blocking and reversible manner. The result? No production downtime.
+
+### Minimal DevOps overhead
+
+As a small team, we didn't have the resources to manage a database cluster ourselves. PlanetScale's managed offering meant we didn't have to worry about managing a database cluster, which saved us valuable time and resources that we could allocate to other areas of the project.
+
+## Summary
+
+If you're looking for a SQL database provider that offers compatibility with Prisma, scalability and high availability at a reasonable price, first-class developer experience, and minimal DevOps overhead, PlanetScale is a great choice.
