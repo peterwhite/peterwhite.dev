@@ -94,7 +94,48 @@ export default async function Page({ params }: BlogPostProps) {
 
       <div className="lg:flex lg:justify-between lg:space-x-14">
         <article className="mb-6">
-          <div className="prose prose-zinc mt-8 dark:prose-invert prose-headings:dark:text-zinc-200 ">
+          {/* TODO: Extract to component for just mobile-only ToC */}
+
+          {post.headings.length > 0 && (
+            <details className="mt-8 block lg:hidden ">
+              <summary className="flex cursor-pointer list-none items-center font-semibold text-zinc-700 decoration-dotted hover:underline dark:text-zinc-200 lg:hidden">
+                <span>Contents</span>
+                <svg
+                  className="ml-2 h-4 w-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </summary>
+              <div className="[@supports(backdrop-filter:blur(0px))]:bg-opacity-50] mx-auto mt-2 block rounded-md border bg-white bg-opacity-50 p-4  backdrop-blur dark:border-transparent dark:bg-zinc-700 dark:bg-opacity-25 dark:shadow-sm sm:rounded-lg sm:border">
+                {post.headings.map((heading: Heading) => {
+                  return (
+                    <div
+                      key={`#${heading.slug}`}
+                      className="block text-zinc-700 dark:text-zinc-300 "
+                    >
+                      <a
+                        className="mb-3 block hover:text-zinc-700 hover:underline hover:dark:text-zinc-400"
+                        href={`#${heading.slug}`}
+                      >
+                        {heading.text}
+                      </a>
+                    </div>
+                  );
+                })}
+              </div>
+            </details>
+          )}
+
+          <div className="prose prose-zinc dark:prose-invert prose-headings:dark:text-zinc-200 lg:mt-8 ">
             <Mdx code={post.body.code} />
             <hr />
             <h3>Thanks for Reading!</h3>
