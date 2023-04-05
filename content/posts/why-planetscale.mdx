@@ -56,9 +56,11 @@ Additionally, the unlimited connections offered by PlanetScale meant we could ha
 
 One of the most significant selling points for us was PlanetScale's developer experience.
 
-With PlanetScale, branching isn't just for your code – it's for your database schemas too. This innovative approach lets you test schema changes before applying them to your production database, ensuring a seamless and error-free transition. Just as developers create branches in their version control system to make changes to their code, PlanetScale enables branching for database schemas, merging the worlds of code and data.
+With PlanetScale, branching isn't just for your code – it's for your database too. Just like git, PlanetScale has branches. You open a development branch of your database, make a deploy request (like a pull request), then merge it into your production branch. PlanetScale handles the deployment for you.
 
-This branching ability doesn't just make life easier for developers; it also creates a safety net. Developers can work with their own pristine remote databases, free from the fear of impacting their colleagues' work. It's like having your own sandbox, but with the power and convenience of a full-fledged database.
+Importantly you are not allowed to make schema changes directly to your production branch. If you try, Prisma will return an error (direct execution of DDL SQL statements is disabled on this database). This is a great feature as it enforces a git style workflow for database changes.
+
+This branching ability doesn't just make life easier when making changes; it also creates a safety net. Developers can work with their own pristine remote databases as branches, free from the fear of impacting their colleagues' work.
 
 But PlanetScale's first-class developer experience doesn't end with branching. Another game-changing feature is its non-blocking schema changes. This magic feature allows us to make alterations to our database schema without impacting its availability.
 
