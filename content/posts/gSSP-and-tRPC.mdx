@@ -9,7 +9,7 @@ GetServerSideProps (gSSP) is your ticket to a better NextJS experience. With gSS
 
 Because gSSP runs _on the backend_, anything you do in your router can also be done in gSSP. Use secrets here, server logic, whatever, they'll be hidden from the client.
 
-Two options for using gSSP with tRPC and NextJS: extract a function or use SSG helpers.
+Three options for using gSSP with tRPC and NextJS: extract a function, use createCaller or use SSG helpers.
 
 ## Extract a Function
 
@@ -34,6 +34,28 @@ export const getServerSideProps = async (ctx) => {
     props: {
       id,
       post,
+    },
+  };
+};
+```
+
+## Use createCaller
+
+A type-safe way to work with gSSP and tRPC is to use the [createCaller function](https://trpc.io/docs/server/server-side-calls).
+
+1. Export your tRPC router
+2. Import your router in your GetServerSideProps, then create a caller
+3. Use your caller to call the procedure you want
+4. Return the result
+
+```javascript
+export const getServerSideProps = async (ctx) => {
+  const trpc = appRouter.createCaller(ctx);
+  const result = await trpc.greeting({ name: 'peter' });
+
+  return {
+    props: {
+      greeting: result,
     },
   };
 };
