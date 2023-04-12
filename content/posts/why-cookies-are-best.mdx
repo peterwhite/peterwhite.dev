@@ -1,0 +1,40 @@
+---
+title: 'Why Cookies Are the Best Place to Store Authentication Tokens'
+date: '2023-03-01'
+description: "How you store tokens is critical in defending your application against malicious attack. Here's why you should use same-site secure cookies."
+featured: true
+---
+
+In this post, I propose that same-site secure cookies are the most secure, easy-to-use and seamless option for authentication, and you should not use locally stored approaches in most situations.
+
+## Where should authentication happen?
+
+In my opinion, authentication should happen on the backend (BE) **upon request**.
+
+For instance, when a user clicks on a delete user button, the BE checks if it is possible before completing the action. You would never trust a FE-only check, as it could be easily manipulated by a malicious user.
+
+If you need to know who the user is and whether they can do an action in advance, just do a request to `/api/me`, then store this in context.
+
+This BE-first approach leads to me to the conclusion that you should use same-site secure cookies, as this will be automatically attached to every request. Storing the token elsewhere on the client (e.g. in LocalStorage, in IndexedDB or even in a Web Worker) would just create another state to manage and require it to be manually attached to every request.
+
+## Why cookies are superior
+
+LocalStorage is not synced to the server, is not validated, and is fully accessible to external JavaScript. Same-site secure cookies, on the other hand, are validated, secure, and automatically attached to every request, making them a perfect fit for BE authentication.
+
+Note, that sameSite means your BE authenication surface must be bound to a single top-level domain, as defined by the [Public Suffix list](https://publicsuffix.org).
+
+## Common misconceptions with cookies
+
+There are some common misconceptions about cookies that we need to dispel:
+
+- GDPR does not require user consent for mandatory, first-party cookies, but it does regulate marketing cookies. So no, this does not mean you need a cookie notice
+- Cookies are not default "better for XSS", but setting `httponly` prevent client-side access to the cookie. But remember, if an attacker can run arbitrary JavaScript on your page, it's game over. Look for protection against that elsewhere (e.g. Content Security Policy)
+- Setting up LocalStorage is not simpler than setting up cookies. You don't need to touch the cookie on the frontend; the backend can set and read it, authenticate on request.
+- Cookies do have a size limit, but this is usually not a problem in practice.
+- CSRF attacks are a downside of cookies, but same-site cookies and CSRF tokens largely eliminate this risk
+
+## Summary
+
+Of course, there is no one-size-fits-all solution for every application, and your choice of authenticated method depends on your use case and security requirements.
+
+However, using same-site secure cookies and authenticating on request is my preferred approach, as it is robust, secure and simple.
