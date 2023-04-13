@@ -50,6 +50,7 @@ A type-safe way to work with gSSP and tRPC is to use the [createCaller function]
 
 ```javascript
 export const getServerSideProps = async (ctx) => {
+  // const context = await createContext(ctx) might be required depending on your setup
   const trpc = appRouter.createCaller(ctx);
   const result = await trpc.greeting({ name: 'peter' });
 
