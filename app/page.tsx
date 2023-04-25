@@ -44,7 +44,7 @@ export default function Page() {
                   Next.js, TypeScript, tRPC &amp; Prisma.
                 </div>
                 <div className="mt-2 font-mono text-sm uppercase text-zinc-800 dark:text-zinc-200">
-                  Senior Software Engineer :: 04/2022 - Present
+                  Tech Lead :: 04/2022 - Present
                 </div>
               </div>
             </div>
