@@ -30,10 +30,10 @@ export default function Page() {
             </ul>
             <h2>Bio</h2>
             <h3>Job Title</h3>
-            <p>Peter White, Senior Software Engineer at IndyRiot</p>
+            <p>Peter White, Tech Lead at IndyRiot</p>
             <h3>Long, 3rd Person</h3>
             <p>
-              Peter White is a Senior Software Engineer at IndyRiot, where he
+              Peter White is a Tech Lead at IndyRiot, where he
               builds software for making better online communities. He is a
               product engineer and full-stack developer with over a decade of
               experience of building startups and internet-based products, in
@@ -43,7 +43,7 @@ export default function Page() {
             <h3>Long, 1st Person</h3>
             <p>
               Hey, I'm Peter! Originally from Yorkshire in the UK, I migrated to
-              Norway in 2021. I am a Senior Software Engineer at IndyRiot, where
+              Norway in 2021. I am a Tech Lead at IndyRiot, where
               I build software for making better online communities. I am a
               product engineer and full-stack developer with over a decade of
               experience building startups and internet-based products, in both
@@ -52,12 +52,12 @@ export default function Page() {
             </p>
             <h3>Short, 3rd Person</h3>
             <p>
-              Peter White is a Senior Software Engineer at IndyRiot, where he
+              Peter White is a Tech Lead at IndyRiot, where he
               builds software for making better online communities
             </p>
             <h3>Short, 1st Person</h3>
             <p>
-              Hey, I'm Peter! I am a Senior Software Engineer at IndyRiot, where
+              Hey, I'm Peter! I am a Tech Lead at IndyRiot, where
               I build software for making better online communities
             </p>
           </div>
