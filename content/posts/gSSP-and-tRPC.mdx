@@ -66,7 +66,7 @@ export const getServerSideProps = async (ctx) => {
 
 A type-safe, simpler way to work with gSSP and tRPC is to use the SSG helpers.
 
-1. Use createProxySSGHelpers, passing the router, context and your transformer to it
+1. Use `createServerSideHelpers` (prior to v10.19.0, use `createProxySSGHelpers`), passing the router, context and your transformer to it
 2. Use prefetch the call the procedures you want. You don't need to assign these to a variable
 3. Pass ssg.dehydrate() to the gSSP props.
 
@@ -79,7 +79,7 @@ export default function Page(props) {
 }
 
 export const getServerSideProps = async (ctx) => {
-  const ssg = createProxySSGHelpers({
+  const ssg = createServerSideHelpers({
     router: appRouter,
     ctx: await createContext(context) // replace with your own context,
     transformer: superjson,
