@@ -75,7 +75,7 @@ export function Footer() {
             className="text-zinc-700 decoration-dotted underline-offset-4 transition hover:text-zinc-800 hover:underline dark:text-zinc-400 dark:hover:text-zinc-200"
             target="_blank"
             rel="noopener noreferrer"
-            href="https://linkedin.com/peterwhite"
+            href="https://www.linkedin.com/in/petewht/"
           >
             LinkedIn
           </a>
