@@ -13,8 +13,9 @@ export default function Page() {
         <div className="prose prose-zinc dark:prose-invert">
           <p>Happily building things on the internet since 2008.</p>
           <p>
-            Proud to be part of the engineering team at IndyRiot; building
-            better online communities.
+            Proud to be part of the engineering team at{' '}
+            <a href="https://graphy.app">Graphy</a>; giving everyone data
+            superpowers.
           </p>
           <p>
             Originally from Yorkshire in the UK, I have been living in Norway
@@ -35,16 +36,32 @@ export default function Page() {
           <li className="gap-4 py-4  sm:pl-8">
             <div>
               <div className="mb-1 font-medium text-zinc-800 dark:text-zinc-200">
+                <span>Graphy</span>
+              </div>
+              <div>
+                <div className="prose prose-zinc dark:text-zinc-400 dark:prose-invert">
+                  Mid-stage startup, giving everyone data superpowers. Watch
+                  this space!
+                </div>
+                <div className="mt-2 font-mono text-sm uppercase text-zinc-800 dark:text-zinc-200">
+                  Senior Software Engineer :: 08/2023 - Present
+                </div>
+              </div>
+            </div>
+          </li>
+          <li className="gap-4 py-4  sm:pl-8">
+            <div>
+              <div className="mb-1 font-medium text-zinc-800 dark:text-zinc-200">
                 <span>indyRiot</span>
               </div>
               <div>
                 <div className="prose prose-zinc dark:text-zinc-400 dark:prose-invert">
-                  Mid-stage startup, making better online communities. Tech lead
-                  on various projects, including migrating legacy application to
-                  Next.js, TypeScript, tRPC &amp; Prisma.
+                  Mid-stage startup, making better online communities. Wide
+                  ranging role including mentorship, ops and migrating legacy
+                  application to Next.js, TypeScript, tRPC &amp; Prisma.
                 </div>
                 <div className="mt-2 font-mono text-sm uppercase text-zinc-800 dark:text-zinc-200">
-                  Tech Lead :: 04/2022 - Present
+                  Tech Lead :: 04/2022 - 07/2023
                 </div>
               </div>
             </div>
