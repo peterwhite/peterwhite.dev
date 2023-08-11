@@ -13,7 +13,7 @@ export interface BlogPostProps {
 }
 
 export const generateStaticParams = async () =>
-  allPosts.map((post) => ({ slug: post._raw.flattenedPath }));
+  allPosts.map((post) => ({ slug: [post._raw.flattenedPath] }));
 
 export async function generateMetadata({
   params,

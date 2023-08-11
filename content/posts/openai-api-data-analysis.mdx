@@ -1,0 +1,59 @@
+---
+title: Improving Data Analysis with OpenAI API
+date: '2023-08-11'
+description: 'An exploration of the challenges faced by language models in understanding math and learn how strategic prompting strategies and descriptive statistics can enable LLMs to give meaningful and reliable data analysis.'
+featured: true
+---
+
+At Graphy, a key part of our product is providing _AI Insights_ on the data that our users provide.
+
+Imagine generating a graph of your sales data and getting brilliant insights from our AI. It could uncover fascinating trends like a seasonality in your sales, that demos conducted on Tuesday afternoons are less likely to close or that a particular salesperson is more likely to close deals with a particular industry.
+
+But wait, we ran into a problem. These insights often turned out to be inaccurate and based on imaginary calculations. The AI confidently shared deep insights that seemed accurate at first glance but didn't hold up under scrutiny. Some were even based on facts and numbers that weren't in the dataset - hallucinations.
+
+We needed a quick solution that didn't require a lot of time or complex changes. We wanted to use the existing OpenAI API and integrate it easily into our code. So, we ruled out complex approaches like fine-tuning, custom models, or LangChain.
+
+Here's what we came up with.
+
+## Why do mathematical hallucinations occur?
+
+Think about your smartphone. When you type a message, it predicts the next word using statistical patterns and relationships between words. It's like a guessing game based on what came before.
+
+LLMs undergo extensive training using vast amounts of text data, typically comprising billions of words. This training enables them to learn patterns, relationships, and the nuances of human language. As a result, they become adept at generating text that closely resembles human-written content.
+
+However, when it comes to mathematical tasks, LLMs encounter challenges. While they may sometimes provide the correct answers, their comprehension of the underlying mathematical concepts remains limited. LLMs lack a true "maths model" or deep mathematical understanding.
+
+In essence, LLMs are language models, not mathematics models. They have acquired the ability to replicate human language patterns and generate coherent text, but their knowledge of mathematics is superficial and derived solely from the patterns and structures present in the training data.
+
+Brian O'Neill, a computer science professor, explains it well: ChatGPT "didn't learn the rules of chemistry, or physics, or math, or anything like that. It learned how people talk and write about those subjects. But that's not the same as understanding them."
+
+## How do we fix this?
+
+Our solution was simple. We started by giving the AI some descriptive statistics about the data.
+
+We provided things like percentages, averages, ranges and other analyses. With careful prompting, this meant the AI didn't attempt to do it's own calculations and instead focused on what LLMs are good at - language.
+
+For example, if we told the AI that "the data is not normally distributed," it would use that information to offer insights like the presence of extreme values or skewed data. By combining this with other details about the dataset, like titles and labels, the AI can give insights that contextual, relevant and meaningful.
+
+## Before and After
+
+For a sample dataset listing GDP generated per capita in USD of 25 EU countries, we saw the following responses from the AI:
+
+Before:
+
+- The country with the highest GDP is Switzerland (_incorrect!_)
+- The country with the lowest GDP is the Portugal (_incorrect!_)
+- These is a wide range of GDPs per capita within the dataset (_correct!_)
+
+After:
+
+- The dataset reflects significant income disparity among EU countries, with Luxembourg being the highest producer of GDP per capita ($92000) compared to Bulgaria which is the least ($16000) (_correct!_)
+- Within the EU, Northern countries, including Norway or Ireland, seem to have higher GDP per capita compared to Eastern countries such as Romania or Poland. This may indicate more advanced economies or more productive workforce in Northern countries. (_interesting speculative insight_)
+- It's interesting to note that more than half of the EU countries listed generate a GDP per capita below this average. This could imply a few countries with high GDP per capita skewing the average. (_correct!_)
+
+## Summary
+
+- We seeded the prompt with descriptive statistics about the data to provide the AI with a mathematical understanding of the dataset.
+- Specific prompting strategies were implemented, such as setting a role as a data analyst and focusing on trends, outliers, and interesting features of the data.
+- Positive prompts were found to be more effective than negative prompts, guiding the AI to utilize the descriptive statistics provided in the dataset rather than restricting it from performing statistical analysis.
+- Metadata about the dataset, including titles and labels, was provided to enhance the contextual insights generated by the AI.
