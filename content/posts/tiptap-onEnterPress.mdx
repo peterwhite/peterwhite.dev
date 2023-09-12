@@ -1,0 +1,47 @@
+---
+title: How to add onKeyPress to TipTap in React
+date: '2023-09-12'
+description: 'A quick tip for TipTap, a headless ProseMirror editor'
+featured: false
+---
+
+At Graphy, we use TipTap as our rich text WYSIWYG editor.
+
+A common request is that the user can submit their content when they press enter.
+
+This is easy for a simple HTML text area:
+
+```html
+<textarea onkeypress="onEnterFunction();"></textarea>
+```
+
+However, TipTap doesn't have an onKeyPress event. Instead, we'll need to make a custom extension that intercepts the enter key and runs a callback:
+
+```typescript
+import { Extension } from '@tiptap/core';
+
+export const interceptNewline = (callback: () => void) => {
+  return Extension.create({
+    name: 'interceptNewline',
+
+    addKeyboardShortcuts() {
+      return {
+        Enter: () => {
+          callback();
+          return true;
+        },
+      };
+    },
+  });
+};
+```
+
+Then, in your editor config, use the extension and pass in your submit function:
+
+```typescript
+const editor = useEditor({
+  extensions: [interceptNewline(yourFunctionHere)],
+});
+```
+
+Now when the user presses enter, your callback will be run!
