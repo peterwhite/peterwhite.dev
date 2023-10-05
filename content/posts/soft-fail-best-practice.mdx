@@ -1,0 +1,43 @@
+---
+title: 'Email deliverability: why SPF softfail is best practice'
+date: '2023-10-5'
+description: 'SPF softfail + DMARC is best practice. I explain the pros and cons of SPF softfail vs hardfail, how DMARC and DKIM work, and tips on making sure your emails get through'
+featured: true
+---
+
+Ever wonder why some emails end up in your spam folder or get rejected as "undeliverable"? There are systems in place to verify who sent an email, but some settings can go too far and block legitimate emails by mistake.
+
+When you send emails from your website or business, your email provider uses protocols like SPF, DMARC and DKIM to check that the emails really came from your domain.
+
+## SPF
+
+- Allows domains to specify which IP addresses are authorized to send email on their behalf
+- Receiving servers check the sending server's IP against the domain's SPF record
+- Problems include trivial spoofing workaround and fails caused by third-party forwarding (relaying)
+
+## DMARC
+
+- Requires alignment between the envelope sender and visible display address to close spoofing loophole
+- Defines emails as aligned if they pass SPF or DKIM checks, otherwise unaligned
+- Gives receiving servers a policy (none/quarantine/reject) for handling unaligned messages
+
+## DKIM
+
+- Uses digital signatures so the receiver can verify a message was sent by the claimed domain
+- Signatures are added by the sending mail server and validated by the receiving server
+- More reliable than SPF because it remains valid even if the email passes through forwarders
+
+You should have all three of these configured on your emaiil sending domain, but there's one setting that's often misunderstood. SPF has two options - "softfail" and "fail" - that impact what happens if to an email if doesn't pass the sending check.
+
+## SPF Fail `-all`
+
+Hard fail will reject any emails that don't pass the check, blocking them from being delivered. This seems secure, but it has downsides. This fails when emails are relayed, becuase those middle-men weren't part of your original check.
+
+## SPF Softfail `~all`
+
+Softfail avoids that by letting those emails through for further verification. It notes the emails as questionable but allows delivery to continue. That gives extra authentication steps like DMARC a chance to still clear the emails as legitimate.
+
+## Best practice
+
+- If you **do not** send emails from your domain, use SPF `-all` to block all emails
+- Otherwise, set SPF to softfail `~all`. Combined with DMARC, this is as secure as a 'hard' fail but without the deliverability issues from relaying
