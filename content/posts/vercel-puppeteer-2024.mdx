@@ -1,0 +1,111 @@
+---
+title: How to use Puppeteer with Serverless Vercel in 2024
+date: '2024-04-23'
+description: Running Chromium on Vercel in a serverless environment. Here's how to do it in 2024, no hacks needed!
+featured: true
+---
+
+Puppeteer is a headless browser that allows you to automate tasks in a browser environment, such as testing, scraping, and generating screenshots, over the DevTools Protocol.
+
+At Graphy, we use it to generate image exports of charts for customers. We made the choice to run it as a serverless function to avoid the need to maintain a Puppeeter instance.
+
+## The old way
+
+Previously, running Chromium on Vercel was a bit of a pain because of function size limits on Vercel.
+
+This required using a cut down Vercel executable like [@sparticuz/chromium-min](https://www.npmjs.com/package/@sparticuz/chromium-min) and loading the Chromium executable from your own URL.
+
+You'll find lots of articles online explaining how to workaround this, but these are now thankfully outdated!
+
+## The new way
+
+In 2024, Vercel has increased the [size limit of functions to 250MB](https://vercel.com/docs/functions/runtimes#bundle-size-limits), which makes it possible to run Chromium on Vercel without major workarounds.
+
+Install `@sparticuz/chromium` and Puppeeter, then use the code below, and call it from an API route:
+
+```javascript
+import chromium from '@sparticuz/chromium';
+
+// Keep in memory for possible re-use between innovations
+let browser: puppeteer.Browser;
+
+const chromeArgs = [
+  // @sparticuz/chromium has default chromeArgs to improve serverless performance, but you can add others as you deem appropriate
+  '--font-render-hinting=none', // Improves font-rendering quality and spacing
+];
+
+export const takeScreenshot = async ({
+  width,
+  height,
+  url,
+}: ScreenshotHandlerProps) => {
+  const isLocal = false; // Set this variable as required - @sparticuz/chromium does not work on ARM, so we use a standard Chrome executable locally - see issue https://github.com/Sparticuz/chromium/issues/186
+
+  if (!browser?.isConnected()) {
+    // If you don't need webGL, this skips the extraction of the bin/swiftshader.tar.br file, improving performance
+    chromium.setGraphicMode = false;
+    browser = await puppeteer.launch({
+      ...(isLocal
+        ? { channel: 'chrome' }
+        : {
+            args: chromeArgs,
+            executablePath: await chrome.executablePath(),
+            ignoreHTTPSErrors: true,
+          }),
+    });
+  }
+
+  const page = await browser.newPage();
+
+  await page.setViewport({
+    width,
+    height,
+    deviceScaleFactor: 2,
+  });
+
+  const imagePage = await page.goto(url, { waitUntil: 'domcontentloaded' });
+
+  if (!imagePage || !imagePage.ok()) {
+    throw new Error('Failed to load image page');
+  }
+
+  const file = await page.screenshot({
+    type: 'png',
+    omitBackground: true,
+  });
+
+  const pages = await browser.pages();
+
+  // Avoids orphaned pages by looping all open pages and closing them
+  for (const openPage of pages) {
+    await openPage.close();
+  }
+
+  // We don't want headless Chrome instances left running locally
+  if (isLocal) {
+    await browser.close();
+  }
+
+  return file;
+};
+```
+
+## Common issues
+
+The AWS Lambda runtime that Vercel uses does not have any included fonts, though [@sparticuz/chromium-min](https://www.npmjs.com/package/@sparticuz/chromium-min) does helpfully add OpenSans for you!
+
+If you see issues with character or emoji display:
+
+- Adding additional fonts to your application to cover the missing characters/emoji. For emoji, I recommend Noto Color Emoji
+- Load the fonts via the chromium.font method - at the time of publication, this is currently broken
+
+If you see performance issues with running Chromium on serverless, consider:
+
+- Tweaking `chromeArgs` to better suit a serverless instance
+- Improving the performance of your requested page
+- [Increase the serverless instance size in the Vercel settings](https://vercel.com/docs/functions/configuring-functions/memory) or via a `vercel.json` file
+
+If you see memory issues:
+
+- [Increase the serverless instance size in the Vercel settings](https://vercel.com/docs/functions/configuring-functions/memory) or via a `vercel.json` file
+- Add the chromeArg `--disable-dev-shm-usage` - in some serverless environments, the dev/shm partition is too small, which makes Chrome crash. This flag creates a temporary directory instead - [see more here](https://issues.chromium.org/issues/40517415)
