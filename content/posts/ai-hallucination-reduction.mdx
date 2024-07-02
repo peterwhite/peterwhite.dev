@@ -25,10 +25,25 @@ Here’s a simplified example of vector embeddings for various words:
 
 Looking at these embeddings, "cat" and "dog" are much closer to each other than to "apple" or "building." Similarly, the query "fruit" is much closer to "apple" and "strawberry" than to "cat" or "dog," making them the top results for a "fruit" query.
 
-This allows models to generate responses as a world model emerges through proximity of embeddings. However, when faced with true novelty not represented in these vector patterns, they can't create new solutions, leading to hallucinations.
+This allows models to generate intelligent responses as a world model emerges through proximity of embeddings.
+
+However, this process of querying embeddings is metaphorically closer to memory as opposed to reasoning. This is a partial explanation of why LLMs hallucinate and return strange responses.
+
+### Memory vs. Reasoning
+We can see these limitations in practice by asking an LLM to complete a [ARC-AGI benchmark task](https://lab42.global/arc/). This is a simple but novel task that resists memorisation - each task is unqiue.
+
+Try completing the task yourself - can you complete the pattern?
+
+![](/images/blog/ai-hallucination-reduction/arc-agi.png)
+
+Whereas most humans can complete novel tasks like this with ease, LLMs struggle.
+
+This does not mean that LLMs are useless, but that we should not expect novel reasoning and should tweak how we work with LLMs to maximise the practical applications of a memory-based approach.
+
+Side note: I would love for this to change! If you disagree that LLMs rely upon memory, [you could win $1M by solving an ARC-AGI benchmark task with AI](https://arcprize.org).
 
 ## Reducing Hallucinations
-Here are a few ways I've managed to reduce hallucinations when working with GPT-3, GPT-3.5, GPT-4 and GPT-4O.
+With this knowledge in mind, let's look into a few practical approaches I've found to reduce hallucinations when working with GPT-3, GPT-3.5, GPT-4 and GPT-4O.
 
 ### Effective Prompting
 
