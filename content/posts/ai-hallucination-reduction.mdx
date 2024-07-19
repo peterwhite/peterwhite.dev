@@ -27,7 +27,7 @@ Looking at these embeddings, "cat" and "dog" are much closer to each other than 
 
 This allows models to generate intelligent responses as a world model emerges through proximity of embeddings.
 
-However, this process of querying embeddings is metaphorically closer to memory as opposed to reasoning. This is a partial explanation of why LLMs hallucinate and return strange responses.
+However, this process of querying embeddings is metaphorically closer to memory as opposed to reasoning. These results are ranked, and the top ranked result returned. When this is a 'close' vector match, you get an hallucination, as if the wrong 'memory' was retrieved. This is a partial explanation of why LLMs hallucinate and return strange responses.
 
 ### Memory vs. Reasoning
 We can see these limitations in practice by asking an LLM to complete a [ARC-AGI benchmark task](https://lab42.global/arc/). This is a simple but novel task that resists memorization - each task is unique.
