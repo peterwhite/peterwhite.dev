@@ -13,7 +13,7 @@ export function GlobalNavigation() {
         >
           <div className="rounded-full p-[3px] transition-transform group-hover:scale-105 ">
             <Image
-              src="/ProfilePicture.png"
+              src="/ProfilePicture.jpg"
               className="block h-10 w-10 rounded-full"
               width={200}
               height={200}

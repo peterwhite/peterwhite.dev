@@ -63,7 +63,7 @@ export default async function Page({ params }: BlogPostProps) {
 
         <div className="flex items-center">
           <Image
-            src="/ProfilePicture.png"
+            src="/ProfilePicture.jpg"
             className="block h-10 w-10 rounded-full"
             width={200}
             height={200}
