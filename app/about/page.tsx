@@ -12,6 +12,12 @@ export default function Page() {
             <h2>Links</h2>
             <ul>
               <li>
+                LinkedIn:{' '}
+                <a href="https://www.linkedin.com/in/petewht/">
+                  https://www.linkedin.com/in/petewht/
+                </a>
+              </li>
+              <li>
                 Twitter: <a href="https://twitter.com/petewht">@petewht</a>
               </li>
               <li>
@@ -20,12 +26,6 @@ export default function Page() {
               <li>
                 Website:{' '}
                 <a href="https://peterwhite.dev/">https://peterwhite.dev</a>
-              </li>
-              <li>
-                LinkedIn:{' '}
-                <a href="https://www.linkedin.com/in/petewht/">
-                  https://www.linkedin.com/in/petewht/
-                </a>
               </li>
             </ul>
             <h2>Bio</h2>

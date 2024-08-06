@@ -18,11 +18,11 @@ export default function Page() {
             interesting, with a short comment. I always appreciate feedback or
             suggestions for future blog posts. You can find me on{' '}
             <a
-              href="https://twitter.com/petewht"
+              href="https://www.linkedin.com/in/petewht/"
               target="_blank"
               rel="noreferrer"
             >
-              Twitter
+              LinkedIn
             </a>{' '}
             or if you want to improve the article to help future readers, please
             feel free to{' '}

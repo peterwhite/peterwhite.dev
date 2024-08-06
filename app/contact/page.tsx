@@ -8,9 +8,6 @@ export default function Page() {
           <p>The best way to contact me is through one of the options below:</p>
           <ul>
             <li>
-              Twitter: <a href="https://twitter.com/petewht">@petewht</a>
-            </li>
-            <li>
               LinkedIn:{' '}
               <a href="https://www.linkedin.com/in/petewht/">
                 https://www.linkedin.com/in/petewht/
