@@ -31,12 +31,6 @@ export function Footer() {
           >
             Posts
           </a>
-          <a
-            className="text-zinc-700 decoration-dotted underline-offset-4 transition hover:text-zinc-800 hover:underline dark:text-zinc-400 dark:hover:text-zinc-200"
-            href="/newsletter"
-          >
-            Newsletter
-          </a>
         </div>
 
         <div className="flex flex-col space-y-4">

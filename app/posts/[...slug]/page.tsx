@@ -73,11 +73,11 @@ export default async function Page({ params }: BlogPostProps) {
             <span>Peter White</span>
             <a
               className="font-medium text-blue-500 hover:text-blue-600"
-              href="https://twitter.com/petewht"
+              href="https://www.linkedin.com/in/petewht/"
               target="_blank"
               rel="noreferrer"
             >
-              @petewht
+              Follow me on LinkedIn
             </a>
           </div>
         </div>
@@ -143,11 +143,11 @@ export default async function Page({ params }: BlogPostProps) {
               I always appreciate feedback or suggestions for future blog posts.
               You can find me on{' '}
               <a
-                href="https://twitter.com/petewht"
+                href="https://www.linkedin.com/in/petewht/"
                 target="_blank"
                 rel="noreferrer"
               >
-                Twitter
+                LinkedIn
               </a>{' '}
               or if you want to improve the article to help future readers,
               please feel free to{' '}
@@ -168,11 +168,17 @@ export default async function Page({ params }: BlogPostProps) {
                 Enjoying this post?
               </h3>
               <p className="text-sm text-zinc-700 dark:text-zinc-400">
-                <Link href={'/newsletter'}>Join my newsletter</Link> or share
-                this post with a friend{' '}
+                <a
+                  href={'https://www.linkedin.com/in/petewht/'}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="cursor-pointer underline"
+                >
+                  Follow me on LinkedIn
+                </a>{' '}
+                or share this post with a friend{' '}
               </p>
             </div>
-
             {post.headings.length > 0 && (
               <div>
                 <h3 className="mb-2 font-semibold text-zinc-700 dark:text-zinc-400">
