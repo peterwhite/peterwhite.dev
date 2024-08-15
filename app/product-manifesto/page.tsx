@@ -4,7 +4,7 @@ export default function Page() {
     <div className="space-y-12">
       <section id="manifesto">
         <h1 className="mb-4 text-2xl font-bold">
-          The Product Engineering Manifesto
+          The Product Engineer Manifesto
         </h1>
         <div className="prose prose-zinc dark:prose-invert">
           <p>We’re builders first, coders second.</p>
