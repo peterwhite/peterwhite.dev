@@ -77,7 +77,7 @@ export function Footer() {
       </div>
 
       <div className=" text-zinc-700 dark:text-zinc-400">
-        <p>Proudly created in beautiful Sætre in Norway 🇳🇴</p>
+        <p>Proudly created in beautiful Norway 🇳🇴</p>
       </div>
     </div>
   );
