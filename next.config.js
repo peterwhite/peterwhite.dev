@@ -16,11 +16,6 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/mentorship/',
-        destination: 'https://mentors.codingcoach.io/u/61e98230815d8c6c32563650?country=NO',
-        permanent: true,
-      },
-      {
         source: '/blog/guide-what-to-do-if-your-traffic-drops-after-migrating-to-cloudflare',
         destination: '/posts/cloudflare-traffic-drop',
         permanent: true,
