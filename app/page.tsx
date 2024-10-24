@@ -11,7 +11,7 @@ export default function Page() {
       <section id="about">
         <h3 className="mb-4 text-xl font-medium">Peter White</h3>
         <div className="prose prose-zinc dark:prose-invert">
-          <p>Happily building things on the internet since 2008.</p>
+          <p>Appily building things on the internet since 1996.</p>
           <p>
             Proud to be part of the engineering team at{' '}
             <a href="https://graphy.app">Graphy</a>; giving everyone data

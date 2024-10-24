@@ -11,7 +11,7 @@ import Script from 'next/script';
 export const metadata: Metadata = {
   title: 'Peter White',
   description:
-    'Full Stack Developer in Norway, happily building things on the internet since 2008',
+    'Full Stack Developer in Norway, appily building things on the internet since 1996',
 };
 
 const inter = Inter({
