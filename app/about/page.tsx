@@ -18,9 +18,6 @@ export default function Page() {
                 </a>
               </li>
               <li>
-                Twitter: <a href="https://twitter.com/petewht">@petewht</a>
-              </li>
-              <li>
                 GitHub: <a href="https://github.com/peterwhite">@peterwhite</a>
               </li>
               <li>

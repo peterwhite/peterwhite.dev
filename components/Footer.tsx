@@ -11,7 +11,7 @@ export function Footer() {
           <p className=" font-medium text-zinc-800 dark:text-zinc-200 ">
             🦉 {duolingoStreak} days
           </p>
-          <p className="truncate pl-2  text-zinc-700 dark:text-zinc-400 ">
+          <p className="truncate pl-2  text-zinc-700 dark:text-zinc-200 ">
             Duolingo Streak
           </p>
         </div>
@@ -20,13 +20,13 @@ export function Footer() {
       <div className=" mb-4 grid w-full grid-cols-1 gap-4 border-b pb-4 dark:border-zinc-600 sm:grid-cols-3">
         <div className="flex flex-col space-y-4">
           <a
-            className="text-zinc-700 decoration-dotted underline-offset-4 transition hover:text-zinc-800 hover:underline dark:text-zinc-400 dark:hover:text-zinc-200"
+            className="text-zinc-700 decoration-dotted underline-offset-4 transition hover:text-zinc-800 hover:underline dark:text-zinc-200 dark:hover:text-zinc-200"
             href="/"
           >
             Home
           </a>
           <a
-            className="text-zinc-700 decoration-dotted underline-offset-4 transition hover:text-zinc-800 hover:underline dark:text-zinc-400 dark:hover:text-zinc-200"
+            className="text-zinc-700 decoration-dotted underline-offset-4 transition hover:text-zinc-800 hover:underline dark:text-zinc-200 dark:hover:text-zinc-200"
             href="/posts"
           >
             Posts
@@ -35,13 +35,13 @@ export function Footer() {
 
         <div className="flex flex-col space-y-4">
           <a
-            className="text-zinc-700 decoration-dotted underline-offset-4 transition hover:text-zinc-800 hover:underline dark:text-zinc-400 dark:hover:text-zinc-200"
+            className="text-zinc-700 decoration-dotted underline-offset-4 transition hover:text-zinc-800 hover:underline dark:text-zinc-200 dark:hover:text-zinc-200"
             href="/about"
           >
             About
           </a>
           <a
-            className="text-zinc-700 decoration-dotted underline-offset-4 transition hover:text-zinc-800 hover:underline dark:text-zinc-400 dark:hover:text-zinc-200"
+            className="text-zinc-700 decoration-dotted underline-offset-4 transition hover:text-zinc-800 hover:underline dark:text-zinc-200 dark:hover:text-zinc-200"
             href="/contact"
           >
             Contact
@@ -50,7 +50,15 @@ export function Footer() {
 
         <div className="flex flex-col space-y-4">
           <a
-            className="text-zinc-700 decoration-dotted underline-offset-4 transition hover:text-zinc-800 hover:underline dark:text-zinc-400 dark:hover:text-zinc-200"
+            className="text-zinc-700 decoration-dotted underline-offset-4 transition hover:text-zinc-800 hover:underline dark:text-zinc-200 dark:hover:text-zinc-200"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.linkedin.com/in/petewht/"
+          >
+            LinkedIn
+          </a>
+          <a
+            className="text-zinc-700 decoration-dotted underline-offset-4 transition hover:text-zinc-800 hover:underline dark:text-zinc-200 dark:hover:text-zinc-200"
             target="_blank"
             rel="noopener noreferrer"
             href="https://twitter.com/petewht"
@@ -58,25 +66,17 @@ export function Footer() {
             Twitter
           </a>
           <a
-            className="text-zinc-700 decoration-dotted underline-offset-4 transition hover:text-zinc-800 hover:underline dark:text-zinc-400 dark:hover:text-zinc-200"
+            className="text-zinc-700 decoration-dotted underline-offset-4 transition hover:text-zinc-800 hover:underline dark:text-zinc-200 dark:hover:text-zinc-200"
             target="_blank"
             rel="noopener noreferrer"
             href="https://github.com/peterwhite"
           >
             GitHub
           </a>
-          <a
-            className="text-zinc-700 decoration-dotted underline-offset-4 transition hover:text-zinc-800 hover:underline dark:text-zinc-400 dark:hover:text-zinc-200"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.linkedin.com/in/petewht/"
-          >
-            LinkedIn
-          </a>
         </div>
       </div>
 
-      <div className=" text-zinc-700 dark:text-zinc-400">
+      <div className=" text-zinc-700 dark:text-zinc-200">
         <p>Proudly created in beautiful Norway 🇳🇴</p>
       </div>
     </div>
