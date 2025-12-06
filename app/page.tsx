@@ -39,7 +39,7 @@ export default function Page() {
                 <span>Graphy</span>
               </div>
               <div>
-                <div className="prose prose-zinc dark:text-zinc-400 dark:prose-invert">
+                <div className="prose prose-zinc dark:prose-invert dark:text-zinc-400">
                   Mid-stage startup, giving everyone data superpowers. Watch
                   this space!
                 </div>
@@ -55,7 +55,7 @@ export default function Page() {
                 <span>indyRiot</span>
               </div>
               <div>
-                <div className="prose prose-zinc dark:text-zinc-400 dark:prose-invert">
+                <div className="prose prose-zinc dark:prose-invert dark:text-zinc-400">
                   Mid-stage startup, making better online communities. Wide
                   ranging role including mentorship, ops and migrating legacy
                   application to Next.js, TypeScript, tRPC &amp; Prisma.
@@ -72,7 +72,7 @@ export default function Page() {
                 <span>Coast</span>
               </div>
               <div>
-                <div className="prose prose-zinc dark:text-zinc-400 dark:prose-invert">
+                <div className="prose prose-zinc dark:prose-invert dark:text-zinc-400">
                   Mid-stage startup, helping small businesses organize in a
                   Slack-like app. Responsible for product, marketing and
                   activation projects.
@@ -89,7 +89,7 @@ export default function Page() {
                 <span>TABLE</span>
               </div>
               <div>
-                <div className="prose prose-zinc dark:text-zinc-400 dark:prose-invert">
+                <div className="prose prose-zinc dark:prose-invert dark:text-zinc-400">
                   TABLE was an early-stage startup, offering a conversational
                   eCommerce platform. Responsible for product and marketing
                   projects, including our integration strategy.
@@ -106,10 +106,10 @@ export default function Page() {
                 <span>Stream</span>
               </div>
               <div>
-                <div className="prose prose-zinc dark:text-zinc-400 dark:prose-invert">
+                <div className="prose prose-zinc dark:prose-invert dark:text-zinc-400">
                   Stream was a property management platform, which aimed to make
                   online communities for apartment blocks and residential
-                  communities. MVP was well recieved but failed to find market
+                  communities. MVP was well received but failed to find market
                   fit.
                 </div>
                 <div className="mt-2 font-mono text-sm uppercase text-zinc-800 dark:text-zinc-200">
@@ -124,7 +124,7 @@ export default function Page() {
                 <span>Bytemark</span>
               </div>
               <div>
-                <div className="prose prose-zinc dark:text-zinc-400 dark:prose-invert">
+                <div className="prose prose-zinc dark:prose-invert dark:text-zinc-400">
                   Acquired by iomart. Mature IaaS company, with an in-house
                   virtualisation platform. Embedded in engneering team,
                   responsible for product strategy and engineering team
@@ -142,7 +142,7 @@ export default function Page() {
                 <span>JobBoard.io</span>
               </div>
               <div>
-                <div className="prose prose-zinc dark:text-zinc-400 dark:prose-invert">
+                <div className="prose prose-zinc dark:prose-invert dark:text-zinc-400">
                   Acquired by ZipRecruiter. Founding team role with diverse
                   responsibilities, including ops, engineering, marketing and
                   sales

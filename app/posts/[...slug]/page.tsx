@@ -7,9 +7,9 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 
 export interface BlogPostProps {
-  params: {
+  params: Promise<{
     slug: string[];
-  };
+  }>;
 }
 
 export const generateStaticParams = async () =>
@@ -20,8 +20,9 @@ export async function generateMetadata({
 }: {
   params: BlogPostProps['params'];
 }): Promise<Metadata> {
-  const slug = params?.slug?.join('/');
-  const post = allPosts.find((post) => post.slugAsParams === slug);
+  const { slug } = await params;
+  const slugPath = slug?.join('/');
+  const post = allPosts.find((post) => post.slugAsParams === slugPath);
   if (!post) {
     return {};
   }
@@ -29,8 +30,9 @@ export async function generateMetadata({
 }
 
 export default async function Page({ params }: BlogPostProps) {
-  const slug = params?.slug?.join('/');
-  const post = allPosts.find((post) => post.slugAsParams === slug);
+  const { slug } = await params;
+  const slugPath = slug?.join('/');
+  const post = allPosts.find((post) => post.slugAsParams === slugPath);
 
   if (!post) {
     notFound();
