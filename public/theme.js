@@ -15,7 +15,7 @@ if (savedPreference === 'true') {
 
 // If user changes dark mode, override preference
 
-prefersDark.addEventListener('change', event => {
+prefersDark.addEventListener('change', (event) => {
   const html = document.querySelector('html');
   if (event.matches) {
     html?.classList.add('dark');
@@ -26,6 +26,4 @@ prefersDark.addEventListener('change', event => {
   }
 });
 
-
 document.querySelector('html')?.classList.remove('invisible');
-

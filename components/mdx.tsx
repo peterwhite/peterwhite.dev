@@ -149,7 +149,7 @@ const components = {
   pre: ({ className, ...props }: { className?: string }) => (
     <pre
       className={classNames(
-        'mt-6 mb-4 overflow-x-auto rounded-lg bg-zinc-900 py-4',
+        'mb-4 mt-6 overflow-x-auto rounded-lg bg-zinc-900 py-4',
         className,
       )}
       {...props}
