@@ -109,7 +109,7 @@ export default function Page() {
                 <div className="prose prose-zinc dark:prose-invert dark:text-zinc-400">
                   Stream was a property management platform, which aimed to make
                   online communities for apartment blocks and residential
-                  communities. MVP was well recieved but failed to find market
+                  communities. MVP was well received but failed to find market
                   fit.
                 </div>
                 <div className="mt-2 font-mono text-sm uppercase text-zinc-800 dark:text-zinc-200">
