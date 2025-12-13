@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export function Footer() {
   const duolingoStreak = Math.ceil(
     (new Date().getTime() - new Date('08/31/2016').getTime()) /
@@ -19,18 +21,18 @@ export function Footer() {
 
       <div className=" mb-4 grid w-full grid-cols-1 gap-4 border-b pb-4 dark:border-zinc-600 sm:grid-cols-3">
         <div className="flex flex-col space-y-4">
-          <a
+          <Link
             className="text-zinc-700 decoration-dotted underline-offset-4 transition hover:text-zinc-800 hover:underline dark:text-zinc-200 dark:hover:text-zinc-200"
             href="/"
           >
             Home
-          </a>
-          <a
+          </Link>
+          <Link
             className="text-zinc-700 decoration-dotted underline-offset-4 transition hover:text-zinc-800 hover:underline dark:text-zinc-200 dark:hover:text-zinc-200"
             href="/posts"
           >
             Posts
-          </a>
+          </Link>
         </div>
 
         <div className="flex flex-col space-y-4">
