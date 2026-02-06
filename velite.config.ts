@@ -30,7 +30,7 @@ const posts = defineCollection({
 
 const reposts = defineCollection({
   name: 'Repost',
-  pattern: 'reposts/**/*.mdx',
+  pattern: 'reposts/**/*.md',
   schema: s
     .object({
       title: s.string().max(999),
