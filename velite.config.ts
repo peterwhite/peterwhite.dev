@@ -3,7 +3,6 @@ import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeHighlight from 'rehype-highlight';
-import type { Plugin } from 'unified';
 
 const posts = defineCollection({
   name: 'Post',
@@ -48,7 +47,6 @@ const reposts = defineCollection({
     })),
 });
 
-
 export default defineConfig({
   root: 'content',
   output: {
@@ -61,10 +59,10 @@ export default defineConfig({
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [
-      rehypeSlug as unknown as Plugin,
-      rehypeHighlight as unknown as Plugin,
+      rehypeSlug,
+      [rehypeHighlight],
       [
-        rehypeAutolinkHeadings as unknown as Plugin,
+        rehypeAutolinkHeadings,
         {
           properties: {
             className: ['subheading-anchor'],
