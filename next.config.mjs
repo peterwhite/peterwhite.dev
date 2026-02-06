@@ -3,7 +3,12 @@ const isBuild = process.argv.indexOf('build') !== -1;
 if (!process.env.VELITE_STARTED && (isDev || isBuild)) {
   process.env.VELITE_STARTED = '1';
   const { build } = await import('velite');
-  await build({ watch: isDev, clean: !isDev });
+  try {
+    await build({ watch: isDev, clean: !isDev });
+  } catch (error) {
+    console.error('Velite build failed:', error);
+    process.exit(1);
+  }
 }
 
 /** @type {import('next').NextConfig} */
