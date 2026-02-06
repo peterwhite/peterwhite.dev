@@ -1,9 +1,11 @@
-import { Post, Repost } from '#/.contentlayer/generated';
+import type { posts, reposts } from '#/.velite';
 import { ExternalLinkIcon } from '@heroicons/react/solid';
 import { format } from 'date-fns';
 import Image from 'next/image';
 import Link from 'next/link';
 
+type Post = (typeof posts)[number];
+type Repost = (typeof reposts)[number];
 type BothPosts = Post | Repost;
 
 export const PostFeed = ({ posts }: { posts: BothPosts[] }) => {
@@ -12,7 +14,7 @@ export const PostFeed = ({ posts }: { posts: BothPosts[] }) => {
       {posts.map((post) => {
         if (post.type === 'Post')
           return (
-            <li key={post._id} className="group flex gap-4 py-4 sm:pl-8">
+            <li key={post.slug} className="group flex gap-4 py-4 sm:pl-8">
               <Link href={post.slug} className="w-full">
                 <span className="font-medium text-zinc-800 underline decoration-dotted underline-offset-4 transition hover:text-zinc-800 dark:text-zinc-200 ">
                   {post.title}
@@ -35,7 +37,7 @@ export const PostFeed = ({ posts }: { posts: BothPosts[] }) => {
 
         if (post.type === 'Repost')
           return (
-            <li key={post._id} className="group flex gap-4 py-4 sm:pl-8">
+            <li key={post.slug} className="group flex gap-4 py-4 sm:pl-8">
               <a
                 href={post.link}
                 target="_blank"

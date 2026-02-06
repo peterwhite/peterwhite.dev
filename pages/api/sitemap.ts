@@ -1,5 +1,4 @@
-import { allPosts } from '#/.contentlayer/generated';
-import { Post } from '#/.contentlayer/generated';
+import { posts } from '#/.velite';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -7,7 +6,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   res.setHeader('Content-Type', 'text/xml');
   res.setHeader('Cache-control', 'stale-while-revalidate, s-maxage=3600');
 
-  const posts = allPosts.map((post: Post) => {
+  const postUrls = posts.map((post) => {
     return `
       <url>
         <loc>${`https://peterwhite.dev${post.slug}`}</loc>
@@ -35,7 +34,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
       <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       ${pagesXml}
-      ${posts}
+      ${postUrls}
       </urlset>`;
 
   res.end(xml);

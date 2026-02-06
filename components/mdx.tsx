@@ -1,8 +1,13 @@
 import * as React from 'react';
 import Image from 'next/image';
-import { useMDXComponent } from 'next-contentlayer/hooks';
+import * as runtime from 'react/jsx-runtime';
 import classNames from 'classnames';
 import { Callout } from './Callout';
+
+function useMDXComponent(code: string) {
+  const fn = new Function(code);
+  return fn({ ...runtime }).default;
+}
 
 const components = {
   h1: ({ className, ...props }: { className?: string }) => (
