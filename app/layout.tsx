@@ -7,6 +7,7 @@ import { Inter, JetBrains_Mono } from 'next/font/google';
 import { AnalyticsWrapper } from '#/components/Analytics';
 import type { Metadata } from 'next';
 import Script from 'next/script';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import 'highlight.js/styles/github-dark.css';
 
 export const metadata: Metadata = {
@@ -39,6 +40,7 @@ export default function RootLayout({
       <body className="relative bg-zinc-100 text-zinc-800 selection:bg-vercel-blue/90 selection:text-white dark:bg-zinc-900 dark:text-zinc-200">
         <Script src="/theme.js" />
         <AnalyticsWrapper />
+        <SpeedInsights />
         <BackDrop />
 
         <GlobalNavigation />
