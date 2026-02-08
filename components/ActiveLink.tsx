@@ -9,7 +9,7 @@ export const ActiveLink = ({
   className,
 }: {
   href: string;
-  children: any;
+  children: React.ReactNode;
   className?: string;
 }) => {
   const pathname = usePathname();
@@ -17,7 +17,7 @@ export const ActiveLink = ({
     <Link
       href={href}
       className={
-        pathname == href ? 'active ' + className : 'in-active ' + className
+        pathname === href ? 'active ' + className : 'in-active ' + className
       }
     >
       {children}
