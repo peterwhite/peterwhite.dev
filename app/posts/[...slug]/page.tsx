@@ -6,11 +6,15 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 
+type Heading = (typeof posts)[number]['toc'][number];
+
 export interface BlogPostProps {
   params: Promise<{
     slug: string[];
   }>;
 }
+
+export const dynamicParams = false;
 
 export const generateStaticParams = async () =>
   posts.map((post) => ({ slug: post.slugAsParams.split('/') }));
@@ -36,12 +40,6 @@ export default async function Page({ params }: BlogPostProps) {
 
   if (!post) {
     notFound();
-  }
-
-  interface Heading {
-    title: string;
-    url: string;
-    items?: Heading[];
   }
 
   return (

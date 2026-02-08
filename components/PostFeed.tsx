@@ -1,7 +1,6 @@
 import type { posts, reposts } from '#/.velite';
 import { ExternalLinkIcon } from '@heroicons/react/solid';
 import { format } from 'date-fns';
-import Image from 'next/image';
 import Link from 'next/link';
 
 type Post = (typeof posts)[number];
@@ -63,6 +62,8 @@ export const PostFeed = ({ posts }: { posts: BothPosts[] }) => {
               </a>
             </li>
           );
+
+        return null;
       })}
     </ul>
   );
