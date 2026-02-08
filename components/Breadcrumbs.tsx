@@ -1,16 +1,16 @@
 'use client';
 
 import React from 'react';
-import { usePathname, useSelectedLayoutSegment } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { ChevronRightIcon } from '@heroicons/react/solid';
-import clsx from 'clsx';
+import classnames from 'classnames';
 
 export function BreadCrumbs() {
   const pathname = usePathname();
   return (
     <div
-      className={clsx(
+      className={classnames(
         pathname === '/' && 'invisible',
         'flex items-center text-sm text-zinc-700 hover:text-zinc-900 dark:text-zinc-400 ',
       )}

@@ -1,10 +1,12 @@
 import { Mdx } from '#/components/mdx';
-import { allPosts } from 'contentlayer/generated';
+import { posts } from '#/.velite';
 import { format } from 'date-fns';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
+
+type Heading = (typeof posts)[number]['toc'][number];
 
 export interface BlogPostProps {
   params: Promise<{
@@ -12,8 +14,10 @@ export interface BlogPostProps {
   }>;
 }
 
+export const dynamicParams = false;
+
 export const generateStaticParams = async () =>
-  allPosts.map((post) => ({ slug: [post._raw.flattenedPath] }));
+  posts.map((post) => ({ slug: post.slugAsParams.split('/') }));
 
 export async function generateMetadata({
   params,
@@ -22,7 +26,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const slugPath = slug?.join('/');
-  const post = allPosts.find((post) => post.slugAsParams === slugPath);
+  const post = posts.find((post) => post.slugAsParams === slugPath);
   if (!post) {
     return {};
   }
@@ -32,15 +36,10 @@ export async function generateMetadata({
 export default async function Page({ params }: BlogPostProps) {
   const { slug } = await params;
   const slugPath = slug?.join('/');
-  const post = allPosts.find((post) => post.slugAsParams === slugPath);
+  const post = posts.find((post) => post.slugAsParams === slugPath);
 
   if (!post) {
     notFound();
-  }
-
-  interface Heading {
-    slug: string;
-    text: string;
   }
 
   return (
@@ -98,7 +97,7 @@ export default async function Page({ params }: BlogPostProps) {
         <article className="mb-6">
           {/* TODO: Extract to component for just mobile-only ToC */}
 
-          {post.headings.length > 0 && (
+          {post.toc.length > 0 && (
             <details className="mt-8 block lg:hidden ">
               <summary className="flex cursor-pointer items-center font-semibold text-zinc-700 decoration-dotted hover:underline dark:text-zinc-200 lg:hidden">
                 <span>Contents</span>
@@ -118,17 +117,17 @@ export default async function Page({ params }: BlogPostProps) {
                 </svg>
               </summary>
               <div className="[@supports(backdrop-filter:blur(0px))]:bg-opacity-50] mx-auto mt-2 block rounded-md border bg-white bg-opacity-50 p-4  backdrop-blur dark:border-transparent dark:bg-zinc-700 dark:bg-opacity-25 dark:shadow-sm sm:rounded-lg sm:border">
-                {post.headings.map((heading: Heading) => {
+                {post.toc.map((heading: Heading) => {
                   return (
                     <div
-                      key={`#${heading.slug}`}
+                      key={heading.url}
                       className="block text-zinc-700 dark:text-zinc-300 "
                     >
                       <a
                         className="mb-3 block hover:text-zinc-700 hover:underline hover:dark:text-zinc-400"
-                        href={`#${heading.slug}`}
+                        href={heading.url}
                       >
-                        {heading.text}
+                        {heading.title}
                       </a>
                     </div>
                   );
@@ -138,7 +137,7 @@ export default async function Page({ params }: BlogPostProps) {
           )}
 
           <div className="prose prose-zinc dark:prose-invert prose-headings:dark:text-zinc-200 lg:mt-8 ">
-            <Mdx code={post.body.code} />
+            <Mdx code={post.body} />
             <hr />
             <h3>Thanks for Reading!</h3>
             <p>
@@ -181,23 +180,23 @@ export default async function Page({ params }: BlogPostProps) {
                 or share this post with a friend{' '}
               </p>
             </div>
-            {post.headings.length > 0 && (
+            {post.toc.length > 0 && (
               <div>
                 <h3 className="mb-2 font-semibold text-zinc-700 dark:text-zinc-400">
                   Contents
                 </h3>
                 <div className="block w-48 overflow-y-auto ">
-                  {post.headings.map((heading: Heading) => {
+                  {post.toc.map((heading: Heading) => {
                     return (
                       <div
-                        key={`#${heading.slug}`}
+                        key={heading.url}
                         className="block w-48 text-sm text-zinc-500 "
                       >
                         <a
                           className="mb-3 block hover:text-zinc-700 hover:underline hover:dark:text-zinc-400"
-                          href={`#${heading.slug}`}
+                          href={heading.url}
                         >
-                          {heading.text}
+                          {heading.title}
                         </a>
                       </div>
                     );

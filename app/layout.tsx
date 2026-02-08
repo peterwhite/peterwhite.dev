@@ -7,6 +7,7 @@ import { Inter, JetBrains_Mono } from 'next/font/google';
 import { AnalyticsWrapper } from '#/components/Analytics';
 import type { Metadata } from 'next';
 import Script from 'next/script';
+import 'highlight.js/styles/github-dark.css';
 
 export const metadata: Metadata = {
   title: 'Peter White',

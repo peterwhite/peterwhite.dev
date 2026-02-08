@@ -1,9 +1,8 @@
 import { PostFeed } from '#/components/PostFeed';
-import { allDocuments } from '#/.contentlayer/generated/index.mjs';
-import { Post, Repost } from '#/.contentlayer/generated';
+import { posts, reposts } from '#/.velite';
 
 export default function Page() {
-  const posts = allDocuments
+  const allDocs = [...posts, ...reposts]
     .filter((post) => post.published)
     .sort((a, b) => Number(new Date(b.date)) - Number(new Date(a.date)));
 
@@ -35,8 +34,7 @@ export default function Page() {
           </p>
         </div>
       </div>
-      {/* TODO: Resolve lazy typing here */}
-      <PostFeed posts={posts as (Post | Repost)[]} />
+      <PostFeed posts={allDocs} />
     </div>
   );
 }

@@ -1,15 +1,21 @@
-const { withContentlayer } = require('next-contentlayer');
+const isDev = process.argv.indexOf('dev') !== -1;
+const isBuild = process.argv.indexOf('build') !== -1;
+if (!process.env.VELITE_STARTED && (isDev || isBuild)) {
+  process.env.VELITE_STARTED = '1';
+  const { build } = await import('velite');
+  try {
+    await build({ watch: isDev, clean: !isDev });
+  } catch (error) {
+    console.error('Velite build failed:', error);
+    process.exit(1);
+  }
+}
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true, // Recommended for the `pages` directory, default in `app`.
+  reactStrictMode: true,
   async redirects() {
     return [
-      {
-        source: '/sitemap.xml',
-        destination: '/api/sitemap',
-        permanent: true,
-      },
       {
         source:
           '/blog/guide-what-to-do-if-your-traffic-drops-after-migrating-to-cloudflare',
@@ -35,4 +41,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withContentlayer(nextConfig);
+export default nextConfig;

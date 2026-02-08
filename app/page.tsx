@@ -1,8 +1,8 @@
-import { allPosts } from '#/.contentlayer/generated';
+import { posts } from '#/.velite';
 import { PostFeed } from '#/components/PostFeed';
 
 export default function Page() {
-  const posts = allPosts
+  const featuredPosts = posts
     .filter((post) => post.published && post.featured)
     .sort((a, b) => Number(new Date(b.date)) - Number(new Date(a.date)));
 
@@ -27,7 +27,7 @@ export default function Page() {
 
       <section id="posts" className="pb-8">
         <h3 className="mb-4 text-xl font-medium">Featured Posts</h3>
-        <PostFeed posts={posts} />
+        <PostFeed posts={featuredPosts} />
       </section>
 
       <section id="experience">
