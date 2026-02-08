@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { usePathname, useSelectedLayoutSegment } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { ChevronRightIcon } from '@heroicons/react/solid';
 import classnames from 'classnames';
