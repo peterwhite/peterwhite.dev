@@ -8,6 +8,7 @@ import { AnalyticsWrapper } from '#/components/Analytics';
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import 'highlight.js/styles/github-dark.css';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
   title: 'Peter White',
@@ -53,6 +54,7 @@ export default function RootLayout({
           <div className="py-4">
             <Footer />
           </div>
+          <SpeedInsights />
         </div>
       </body>
     </html>
