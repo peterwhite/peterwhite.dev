@@ -25,5 +25,3 @@ prefersDark.addEventListener('change', (event) => {
     localStorage.setItem('darkMode', 'false');
   }
 });
-
-document.querySelector('html')?.classList.remove('invisible');

@@ -34,8 +34,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${jetBrains.variable} invisible antialiased
-    `}
+      className={`${inter.variable} ${jetBrains.variable} antialiased`}
     >
       <body className="relative bg-zinc-100 text-zinc-800 selection:bg-vercel-blue/90 selection:text-white dark:bg-zinc-900 dark:text-zinc-200">
         <Script src="/theme.js" strategy="beforeInteractive" />
