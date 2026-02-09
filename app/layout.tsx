@@ -6,7 +6,6 @@ import '#/styles/globals.css';
 import { Inter, JetBrains_Mono } from 'next/font/google';
 import { AnalyticsWrapper } from '#/components/Analytics';
 import type { Metadata } from 'next';
-import Script from 'next/script';
 import 'highlight.js/styles/github-dark.css';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
@@ -26,6 +25,23 @@ const jetBrains = JetBrains_Mono({
   variable: '--font-mono',
 });
 
+// Inline script that applies the "dark" class to <html> before the first paint,
+// preventing a flash of the wrong theme. Uses dangerouslySetInnerHTML to inject
+// the script directly into the HTML — the standard pattern used by next-themes
+// and other Next.js dark mode implementations.
+const THEME_SCRIPT = `
+  (function () {
+    try {
+      var classList = document.documentElement.classList;
+      var stored = localStorage.getItem('darkMode');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (stored === 'true' || (!stored && prefersDark)) {
+        classList.add('dark');
+      }
+    } catch (e) {}
+  })();
+`;
+
 export default function RootLayout({
   children,
 }: {
@@ -35,9 +51,14 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${inter.variable} ${jetBrains.variable} antialiased`}
+      suppressHydrationWarning
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }}
+        />
+      </head>
       <body className="relative bg-zinc-100 text-zinc-800 selection:bg-vercel-blue/90 selection:text-white dark:bg-zinc-900 dark:text-zinc-200">
-        <Script src="/theme.js" strategy="beforeInteractive" />
         <AnalyticsWrapper />
         <BackDrop />
 
