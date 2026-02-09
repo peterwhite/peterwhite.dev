@@ -6,7 +6,7 @@ import DarkModeToggle from './DarkModeToggle';
 export function GlobalNavigation() {
   return (
     <nav className="sticky left-0 top-0 z-40 w-full sm:top-6  ">
-      <div className="[@supports(backdrop-filter:blur(0px))]:bg-opacity-50] mx-auto flex max-w-5xl items-center justify-between border-b bg-white bg-opacity-50 p-4 py-2 text-sm backdrop-blur  transition-colors duration-150 dark:border-zinc-600 dark:bg-zinc-700 dark:bg-opacity-25 dark:shadow-sm sm:rounded-lg lg:px-6 ">
+      <div className="[@supports(backdrop-filter:blur(0px))]:bg-opacity-50 mx-auto flex max-w-5xl items-center justify-between border-b bg-white bg-opacity-50 p-4 py-2 text-sm backdrop-blur  transition-colors duration-150 dark:border-zinc-600 dark:bg-zinc-700 dark:bg-opacity-25 dark:shadow-sm sm:rounded-lg lg:px-6 ">
         <Link
           className="group flex items-center justify-center rounded-full bg-white bg-gradient-to-r from-blue-500 via-green-500 to-purple-600 bg-[length:400%_400%] transition hover:scale-105 hover:animate-border focus:outline-none focus:ring-0 "
           href="/"
