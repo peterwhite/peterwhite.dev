@@ -2,12 +2,12 @@
   "name": "portfolio",
   "private": true,
   "scripts": {
-    "build": "next build",
-    "dev": "next dev",
+    "build": "NODE_ENV=production next build",
+    "dev": "NODE_ENV=development next dev",
     "lint": "next lint",
     "prettier": "prettier --write --ignore-unknown .",
     "prettier:check": "prettier --check --ignore-unknown .",
-    "start": "next start",
+    "start": "NODE_ENV=production next start",
     "test": "npm run prettier:check && npm run lint"
   },
   "prettier": {
