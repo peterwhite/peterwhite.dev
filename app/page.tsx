@@ -19,7 +19,7 @@ export default function Page() {
           </p>
           <p>
             Originally from Yorkshire in the UK, I have been living in Norway
-            since 2021. Outside of technology, I spend my time learning
+            since 2022. Outside of technology, I spend my time learning
             Norwegian, walking in nature and listening to podcasts.
           </p>
         </div>
@@ -58,8 +58,9 @@ export default function Page() {
               <div>
                 <div className="prose prose-zinc dark:prose-invert dark:text-zinc-400">
                   Mid-stage startup, giving everyone data superpowers. Built an
-                  AI agent for data insights, developed a data visualisation SDK,
-                  and shipped reliable headless image export with Puppeteer.
+                  AI agent for data insights, developed a data visualisation
+                  SDK, and shipped reliable headless image export with
+                  Puppeteer.
                 </div>
                 <div className="mt-2 font-mono text-sm uppercase text-zinc-800 dark:text-zinc-200">
                   Senior Software Engineer :: 08/2023 - 01/2026

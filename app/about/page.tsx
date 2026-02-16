@@ -40,7 +40,7 @@ export default function Page() {
             <h3>Long, 1st Person</h3>
             <p>
               Hey, I'm Peter! Originally from Yorkshire in the UK, I migrated to
-              Norway in 2021. I am a Product Engineer at GitBook, where I build
+              Norway in 2022. I am a Product Engineer at GitBook, where I build
               software that helps teams share knowledge faster. I am a product
               engineer and full-stack developer with over a decade of experience
               building startups and internet-based products, in both founding
