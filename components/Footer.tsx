@@ -1,9 +1,11 @@
+'use client';
+
 import Link from 'next/link';
 
 export function Footer() {
+  const startedAtUtc = Date.UTC(2016, 7, 31);
   const duolingoStreak = Math.ceil(
-    (new Date().getTime() - new Date('08/31/2016').getTime()) /
-      (1000 * 3600 * 24),
+    (Date.now() - startedAtUtc) / (1000 * 3600 * 24),
   );
 
   return (
