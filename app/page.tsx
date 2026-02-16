@@ -13,9 +13,9 @@ export default function Page() {
         <div className="prose prose-zinc dark:prose-invert">
           <p>Happily building things on the internet since 2008.</p>
           <p>
-            Proud to be part of the engineering team at{' '}
-            <a href="https://graphy.app">Graphy</a>; giving everyone data
-            superpowers.
+            Proud to be part of the product engineering team at{' '}
+            <a href="https://www.gitbook.com">GitBook</a>; helping teams share
+            knowledge faster.
           </p>
           <p>
             Originally from Yorkshire in the UK, I have been living in Norway
@@ -36,15 +36,33 @@ export default function Page() {
           <li className="gap-4 py-4  sm:pl-8">
             <div>
               <div className="mb-1 font-medium text-zinc-800 dark:text-zinc-200">
+                <span>GitBook</span>
+              </div>
+              <div>
+                <div className="prose prose-zinc dark:prose-invert dark:text-zinc-400">
+                  Scale-stage company helping teams document and share
+                  knowledge. Building product experiences for technical and
+                  non-technical users.
+                </div>
+                <div className="mt-2 font-mono text-sm uppercase text-zinc-800 dark:text-zinc-200">
+                  Product Engineer :: 02/2026 - Present
+                </div>
+              </div>
+            </div>
+          </li>
+          <li className="gap-4 py-4  sm:pl-8">
+            <div>
+              <div className="mb-1 font-medium text-zinc-800 dark:text-zinc-200">
                 <span>Graphy</span>
               </div>
               <div>
                 <div className="prose prose-zinc dark:prose-invert dark:text-zinc-400">
-                  Mid-stage startup, giving everyone data superpowers. Watch
-                  this space!
+                  Mid-stage startup, giving everyone data superpowers. Built an
+                  AI agent for data insights, developed a data visualisation SDK,
+                  and shipped reliable headless image export with Puppeteer.
                 </div>
                 <div className="mt-2 font-mono text-sm uppercase text-zinc-800 dark:text-zinc-200">
-                  Senior Software Engineer :: 08/2023 - Present
+                  Senior Software Engineer :: 08/2023 - 01/2026
                 </div>
               </div>
             </div>

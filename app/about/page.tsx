@@ -27,35 +27,35 @@ export default function Page() {
             </ul>
             <h2>Bio</h2>
             <h3>Job Title</h3>
-            <p>Peter White, Senior Software Engineer at Graphy</p>
+            <p>Peter White, Product Engineer at GitBook</p>
             <h3>Long, 3rd Person</h3>
             <p>
-              Peter White is a Senior Software Engineer at Graphy, where he
-              builds software that gives everyone data superpowers. He is a
-              product engineer and full-stack developer with over a decade of
-              experience of building startups and internet-based products, in
-              both founding and contributing roles. He is also a mentor, advisor
-              and investor in early stage startups.
+              Peter White is a Product Engineer at GitBook, where he builds
+              software that helps teams share knowledge faster. He is a product
+              engineer and full-stack developer with over a decade of experience
+              of building startups and internet-based products, in both founding
+              and contributing roles. He is also a mentor, advisor and investor
+              in early stage startups.
             </p>
             <h3>Long, 1st Person</h3>
             <p>
               Hey, I'm Peter! Originally from Yorkshire in the UK, I migrated to
-              Norway in 2021. I am a Senior Software Engineer at Graphy, where I
-              build software that gives everyone data superpowers. I am a
-              product engineer and full-stack developer with over a decade of
-              experience building startups and internet-based products, in both
-              founding and contributing roles. I am also a mentor, advisor, and
-              investor in early stage startups.
+              Norway in 2021. I am a Product Engineer at GitBook, where I build
+              software that helps teams share knowledge faster. I am a product
+              engineer and full-stack developer with over a decade of experience
+              building startups and internet-based products, in both founding
+              and contributing roles. I am also a mentor, advisor, and investor
+              in early stage startups.
             </p>
             <h3>Short, 3rd Person</h3>
             <p>
-              Peter White is a Senior Software Engineer at Graphy, where he
-              builds software that gives everyone data superpowers.
+              Peter White is a Product Engineer at GitBook, where he builds
+              software that helps teams share knowledge faster.
             </p>
             <h3>Short, 1st Person</h3>
             <p>
-              Hey, I'm Peter! I am a Senior Software Engineer at Graphy, where I
-              build software that gives everyone data superpowers.
+              Hey, I'm Peter! I am a Product Engineer at GitBook, where I build
+              software that helps teams share knowledge faster.
             </p>
           </div>
         </div>
