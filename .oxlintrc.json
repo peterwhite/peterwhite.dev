@@ -1,12 +1,6 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": [
-    "nextjs",
-    "react",
-    "jsx-a11y",
-    "import",
-    "typescript"
-  ],
+  "plugins": ["nextjs", "react", "jsx-a11y", "import", "typescript"],
   "categories": {
     "correctness": "error"
   },
@@ -14,12 +8,7 @@
     "browser": true,
     "node": true
   },
-  "ignorePatterns": [
-    ".next",
-    ".velite",
-    "public/static",
-    "next-env.d.ts"
-  ],
+  "ignorePatterns": [".next", ".velite", "public/static", "next-env.d.ts"],
   "rules": {
     "nextjs/no-html-link-for-pages": "off",
     "jsx-a11y/heading-has-content": "off",

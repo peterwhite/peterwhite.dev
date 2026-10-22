@@ -17,8 +17,7 @@ export function Callout({
         {
           'border-zinc-900 bg-zinc-50/50 text-zinc-900 dark:border-zinc-200 dark:bg-zinc-700 dark:text-zinc-50':
             type === 'default',
-          'border-red-900 bg-red-50/50 text-red-900':
-            type === 'danger',
+          'border-red-900 bg-red-50/50 text-red-900': type === 'danger',
           'border-yellow-900 bg-yellow-50/50 text-yellow-900':
             type === 'warning',
         },

@@ -54,9 +54,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        <script
-          dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }}
-        />
+        <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
       </head>
       <body className="relative bg-zinc-100! text-zinc-800! selection:bg-vercel-blue/90 selection:text-white dark:bg-zinc-900! dark:text-zinc-200!">
         <AnalyticsWrapper />
