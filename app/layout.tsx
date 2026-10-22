@@ -15,6 +15,8 @@ export const metadata: Metadata = {
     'Full Stack Developer in Norway, happily building things on the internet since 2008',
 };
 
+const renderedAt = Date.now();
+
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
@@ -70,7 +72,7 @@ export default function RootLayout({
           </div>
 
           <div className="py-4">
-            <Footer />
+            <Footer renderedAt={renderedAt} />
           </div>
           <SpeedInsights />
         </div>
