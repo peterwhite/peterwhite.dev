@@ -6,7 +6,7 @@ export default function Page() {
         <div className="prose prose-zinc dark:prose-invert">
           <p>Some helpful information about me.</p>
         </div>
-        <div className="prose prose-zinc dark:prose-invert prose-headings:dark:text-zinc-200 ">
+        <div className="prose prose-zinc dark:prose-invert dark:prose-headings:text-zinc-200 ">
           <div className="mb-8">
             <h2>Links</h2>
             <ul>

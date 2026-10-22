@@ -18,8 +18,7 @@
     ".next",
     ".velite",
     "public/static",
-    "next-env.d.ts",
-    "tailwind.config.js"
+    "next-env.d.ts"
   ],
   "rules": {
     "nextjs/no-html-link-for-pages": "off",
