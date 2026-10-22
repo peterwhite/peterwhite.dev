@@ -2,7 +2,6 @@ import { Mdx } from '#/components/mdx';
 import { posts } from '#/.velite';
 import { format } from 'date-fns';
 import Image from 'next/image';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 
@@ -85,7 +84,7 @@ export default async function Page({ params }: BlogPostProps) {
         {post?.image && (
           <Image
             src={post.image}
-            className="aspect-video w-full rounded-lg object-cover lg:aspect-[2/1]"
+            className="aspect-video w-full rounded-lg object-cover lg:aspect-2/1"
             width={1000}
             height={500}
             alt="Post Cover Photo"
@@ -116,7 +115,7 @@ export default async function Page({ params }: BlogPostProps) {
                   />
                 </svg>
               </summary>
-              <div className="[@supports(backdrop-filter:blur(0px))]:bg-opacity-50] mx-auto mt-2 block rounded-md border bg-white bg-opacity-50 p-4  backdrop-blur dark:border-transparent dark:bg-zinc-700 dark:bg-opacity-25 dark:shadow-sm sm:rounded-lg sm:border">
+              <div className="mx-auto mt-2 block rounded-md border bg-white/50 p-4  backdrop-blur-sm dark:border-transparent dark:bg-zinc-700/25 dark:shadow-xs sm:rounded-lg sm:border">
                 {post.toc.map((heading: Heading) => {
                   return (
                     <div
@@ -124,7 +123,7 @@ export default async function Page({ params }: BlogPostProps) {
                       className="block text-zinc-700 dark:text-zinc-300 "
                     >
                       <a
-                        className="mb-3 block hover:text-zinc-700 hover:underline hover:dark:text-zinc-400"
+                        className="mb-3 block hover:text-zinc-700 hover:underline dark:hover:text-zinc-400"
                         href={heading.url}
                       >
                         {heading.title}
@@ -136,7 +135,7 @@ export default async function Page({ params }: BlogPostProps) {
             </details>
           )}
 
-          <div className="prose prose-zinc dark:prose-invert prose-headings:dark:text-zinc-200 lg:mt-8 ">
+          <div className="prose prose-zinc dark:prose-invert dark:prose-headings:text-zinc-200 lg:mt-8 ">
             <Mdx code={post.body} />
             <hr />
             <h3>Thanks for Reading!</h3>
@@ -193,7 +192,7 @@ export default async function Page({ params }: BlogPostProps) {
                         className="block w-48 text-sm text-zinc-500 "
                       >
                         <a
-                          className="mb-3 block hover:text-zinc-700 hover:underline hover:dark:text-zinc-400"
+                          className="mb-3 block hover:text-zinc-700 hover:underline dark:hover:text-zinc-400"
                           href={heading.url}
                         >
                           {heading.title}

@@ -1,5 +1,5 @@
 import type { posts, reposts } from '#/.velite';
-import { ExternalLinkIcon } from '@heroicons/react/solid';
+import { ExternalLinkIcon } from './icons';
 import { format } from 'date-fns';
 import Link from 'next/link';
 

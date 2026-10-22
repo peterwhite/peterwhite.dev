@@ -1,11 +1,18 @@
 'use client';
 
 import Link from 'next/link';
+import { useSyncExternalStore } from 'react';
 
-export function Footer() {
-  const startedAtUtc = Date.UTC(2016, 7, 31);
-  const duolingoStreak = Math.ceil(
-    (Date.now() - startedAtUtc) / (1000 * 3600 * 24),
+const startedAtUtc = Date.UTC(2016, 7, 31);
+const daysSinceStart = (time: number) =>
+  Math.ceil((time - startedAtUtc) / (1000 * 3600 * 24));
+const subscribe = () => () => {};
+
+export function Footer({ renderedAt }: { renderedAt: number }) {
+  const duolingoStreak = useSyncExternalStore(
+    subscribe,
+    () => daysSinceStart(Date.now()),
+    () => daysSinceStart(renderedAt),
   );
 
   return (

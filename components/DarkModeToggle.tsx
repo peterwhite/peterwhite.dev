@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import { SunIcon, MoonIcon } from '@heroicons/react/solid';
+import { SunIcon, MoonIcon } from './icons';
 
 const DarkModeToggle = () => {
   useEffect(() => {

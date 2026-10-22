@@ -11,5 +11,5 @@ Next.js introduced the `app/` directory (beta). This is the result of the [La
 
 ## Running Locally
 
-1. Install dependencies: `npm` (Next Canary + ContentLayer requires --force right now (27/01/23))
-2. Start the dev server: `npm run dev`
+1. Install dependencies: `pnpm install`
+2. Start the dev server: `pnpm dev`

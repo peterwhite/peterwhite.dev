@@ -15,6 +15,8 @@ export const metadata: Metadata = {
     'Full Stack Developer in Norway, happily building things on the internet since 2008',
 };
 
+const renderedAt = Date.now();
+
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
@@ -22,7 +24,7 @@ const inter = Inter({
 
 const jetBrains = JetBrains_Mono({
   subsets: ['latin'],
-  variable: '--font-mono',
+  variable: '--font-jetbrains-mono',
 });
 
 // Inline script that applies the "dark" class to <html> before the first paint,
@@ -50,15 +52,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`${inter.variable} ${jetBrains.variable} antialiased`}
       suppressHydrationWarning
     >
       <head>
-        <script
-          dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }}
-        />
+        <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
       </head>
-      <body className="relative bg-zinc-100 text-zinc-800 selection:bg-vercel-blue/90 selection:text-white dark:bg-zinc-900 dark:text-zinc-200">
+      <body className="relative bg-zinc-100! text-zinc-800! selection:bg-vercel-blue/90 selection:text-white dark:bg-zinc-900! dark:text-zinc-200!">
         <AnalyticsWrapper />
         <BackDrop />
 
@@ -68,11 +69,11 @@ export default function RootLayout({
           <div className="space-y-4 py-6">
             <BreadCrumbs />
 
-            <main className="mt-6"> {children}</main>
+            <main> {children}</main>
           </div>
 
           <div className="py-4">
-            <Footer />
+            <Footer renderedAt={renderedAt} />
           </div>
           <SpeedInsights />
         </div>

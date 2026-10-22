@@ -76,16 +76,16 @@ const components = {
   ),
   p: ({ className, ...props }: { className?: string }) => (
     <p
-      className={classNames('leading-7 [&:not(:first-child)]:mt-6', className)}
+      className={classNames('leading-7 not-first:mt-6', className)}
       {...props}
     />
   ),
   ul: ({ className, ...props }: { className?: string }) => (
-    <ul className={classNames('my-6 ml-6 list-disc', className)} {...props} />
+    <ul className={classNames('my-6! ml-6 list-disc', className)} {...props} />
   ),
   ol: ({ className, ...props }: { className?: string }) => (
     <ol
-      className={classNames('my-6 ml-6 list-decimal', className)}
+      className={classNames('my-6! ml-6 list-decimal', className)}
       {...props}
     />
   ),
@@ -136,7 +136,7 @@ const components = {
   th: ({ className, ...props }: { className?: string }) => (
     <th
       className={classNames(
-        'border border-zinc-200 px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right',
+        'border border-zinc-200 px-4 py-2 text-left font-bold [[align=center]]:text-center [[align=right]]:text-right',
         className,
       )}
       {...props}
@@ -145,7 +145,7 @@ const components = {
   td: ({ className, ...props }: { className?: string }) => (
     <td
       className={classNames(
-        'border border-zinc-200 px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right',
+        'border border-zinc-200 px-4 py-2 text-left [[align=center]]:text-center [[align=right]]:text-right',
         className,
       )}
       {...props}
@@ -163,7 +163,7 @@ const components = {
   code: ({ className, ...props }: { className?: string }) => (
     <code
       className={classNames(
-        // 'relative rounded border py-[0.2rem] px-[0.3rem] font-mono text-sm text-zinc-600',
+        // 'relative rounded-sm border py-[0.2rem] px-[0.3rem] font-mono text-sm text-zinc-600',
         className,
       )}
       {...props}
@@ -183,6 +183,7 @@ export function Mdx({ code }: MdxProps) {
 
   return (
     <div className="mdx">
+      {/* eslint-disable-next-line react/static-components */}
       <Component components={components} />
     </div>
   );
