@@ -2,7 +2,6 @@ import { Mdx } from '#/components/mdx';
 import { posts } from '#/.velite';
 import { format } from 'date-fns';
 import Image from 'next/image';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 

@@ -5,6 +5,7 @@ import Link from 'next/link';
 export function Footer() {
   const startedAtUtc = Date.UTC(2016, 7, 31);
   const duolingoStreak = Math.ceil(
+    // eslint-disable-next-line react/purity
     (Date.now() - startedAtUtc) / (1000 * 3600 * 24),
   );
 
