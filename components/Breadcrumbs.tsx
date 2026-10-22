@@ -3,7 +3,7 @@
 import React from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import { ChevronRightIcon } from '@heroicons/react/solid';
+import { ChevronRightIcon } from './icons';
 import classnames from 'classnames';
 
 export function BreadCrumbs() {
